@@ -1,0 +1,74 @@
+.element__tag1 {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 256px;
+    width: 213.54px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+
+.print-name-title {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 317px;
+    width: 260.54px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.element__tag2 {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 276px;
+    width: 213.54px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+}
+
+.print-sub-title {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 349px;
+    width: 260.54px;
+    font-size: 15px;
+    text-align: center; 
+}
+
+
+.element-avatar {
+    position: absolute;
+    top: 110px;
+    z-index: 2;
+    left: 60px;
+    width: 95px;
+    height: 130px;
+    border-radius: 5px;
+}
+
+.print-element-avatar {
+    position: absolute;
+    top: 185px;
+    z-index: 2;
+    left: 80px;
+    border-radius: 5px;
+}
+
+.element-code {
+    position: absolute;
+    top: 277px;
+    left: 55px;
+    z-index: 2
+}
+
+.print-element-code {
+    position: absolute;
+    top: 330px;
+    left: 75px;
+    z-index: 2
+}

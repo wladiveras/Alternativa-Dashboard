@@ -1,0 +1,110 @@
+.element__tag1 {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 217px;
+    left: -54px;
+    width: 220px;
+    font-size: 10px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.print-name-title {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 317px;
+    width: 260.54px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.element__tag2 {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 217px;
+    left: -14px;
+    width: 220px;
+    font-size: 10px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.print-sub-title {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 349px;
+    width: 260.54px;
+    font-size: 15px;
+    text-align: center; 
+}
+
+.element__tag3 {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 290px;
+    left: -14px;
+    width: 220px;
+    font-size: 10px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+.element__tag4 {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 375px;
+    left: -14px;
+    width: 220px;
+    font-size: 10px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+.element-avatar {
+    position: absolute;
+    top: 11px;
+    z-index: 2;
+    left: 108px;
+    width: 83px;
+    height: 105px;
+    border-radius: 5px;
+    transform: rotate(90deg);
+    -ms-transform:rotate(90deg); 
+}
+
+.print-element-avatar {
+    position: absolute;
+    top: 185px;
+    z-index: 2;
+    left: 80px;
+    border-radius: 5px;
+}
+
+.element-code {
+    position: absolute;
+    top: 277px;
+    left: 55px;
+    z-index: 2
+}
+
+.print-element-code {
+    position: absolute;
+    top: 330px;
+    left: 75px;
+    z-index: 2
+}

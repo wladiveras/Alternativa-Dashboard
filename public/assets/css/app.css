@@ -1,0 +1,59 @@
+.preview-invert {
+    width:213px;
+    height:332px;
+    margin: 1px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.watermark {
+    opacity: 0.1;
+    color: white;
+    position: absolute;
+    right: 20px;
+    z-index: 6;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.print-front,
+.print-back {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+}
+
+.print-flipper {
+    position: relative;
+}
+
+/* front pane, placed above back */
+.print-front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+    overflow: hidden;
+}
+
+/* back, initially hidden pane */
+.print-print-back {
+    transform: rotateY(180deg);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.print-flip-container,
+.print-front,
+.print-back {
+    display:block;
+    width: 262px;
+    height: 395px;
+    margin-left: 0px !important;
+    margin-bottom: 10px !important;
+    background-size: 100% 100%;
+}

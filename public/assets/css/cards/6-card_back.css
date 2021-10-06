@@ -1,0 +1,35 @@
+.element__back1 {
+	display: block;
+    position: absolute;
+    z-index: 1;
+    top: 113px;
+    left: 7px;
+    width: 200px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 156px;
+    left: 7px;
+    width: 200px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 198px;
+    left: 7px;
+    width: 200px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+}

@@ -1,0 +1,36 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 58px;
+    left: 19px;
+    width: 200px;
+    height: 20px;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 95px;
+    left: 19px;
+    width: 200px;
+    height: 20px;
+    font-size: 12px;
+    color: #000;
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 136px;
+    left: 19px;
+    width: 200px;
+    height: 20px;
+    font-size: 12px;
+    color: #000;
+}

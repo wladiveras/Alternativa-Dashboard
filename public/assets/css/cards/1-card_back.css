@@ -1,0 +1,11 @@
+.element__back1 {
+	display: block;	
+	position: absolute;
+	z-index: 1;
+    	top: 250px;
+    	left: 7px;
+    	width: 200px;
+    	height: 20px;
+    	font-size: 15px;
+    	text-align: center;
+}

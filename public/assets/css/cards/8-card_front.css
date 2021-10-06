@@ -1,0 +1,56 @@
+.element__tag1 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 120px;
+    left: -34px;
+    width: 213.54px;
+    font-family: arial;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__tag2 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 120px;
+    left: -61px;
+    width: 213.54px;
+    font-family: arial;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__tag3 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 325px;
+    left: -61px;
+    width: 213.54px;
+    font-family: arial;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element-avatar {
+    position: absolute;
+    top: 6px;
+    z-index: 2;
+    left: 110px;
+    width: 70px;
+    height: 90px;
+    border-radius: 0;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
