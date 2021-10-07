@@ -33,6 +33,9 @@ use App\Http\Controllers\Dashboard\NewOrderController;
 
     })->name('home');
 
+    //Deploy by github
+    Route::post('deploy', [DeployController::class, 'deploy'])->name('Deployment');
+
     // Funções de Pedidos
     Route::get('/order', [OrderController::class, 'index'])->name('Order');
     Route::post('/order/aprove', [OrderController::class, 'aprove'])->name('OrderAprove');

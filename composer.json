@@ -17,7 +17,8 @@
         "maatwebsite/excel": "^3.1",
         "madnest/madzipper": "^1.1",
         "milon/barcode": "^8.0",
-        "pusher/pusher-php-server": "^5.0"
+        "pusher/pusher-php-server": "^5.0",
+        "symfony/process": "^5.3"
     },
     "require-dev": {
         "bennett-treptow/laravel-migration-generator": "^3.2",
