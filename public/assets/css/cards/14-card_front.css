@@ -1,0 +1,47 @@
+.element__tag1 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 145px;
+    left: 0px;
+    width: 213.54px;
+    font-size: 20px;
+    font-family: arial;
+    font-weight: bold;
+    text-align: center;
+    /*
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    */
+}
+
+.element__tag2 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 165px;
+    left: 0px;
+    width: 213.54px;
+    font-size: 20px;
+    font-family: arial;
+    text-align: center;
+    font-weight: bold;
+    /*
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    */
+}
+
+.element-avatar {
+    position: absolute;
+    top: 33px;
+    z-index: 2;
+    left: 66px;
+    width: 82px;
+    height: 110px;
+    border-radius: 10px;
+    /*
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    */
+}
