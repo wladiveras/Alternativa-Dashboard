@@ -1,0 +1,78 @@
+.element__tag1 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 260px;
+    left: -16px;
+    width: 213.54px;
+    font-size: 12px;
+    font-family: arial;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__tag2 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 241px;
+    left: -28px;
+    width: 213.54px;
+    font-size: 12px;
+    font-family: arial;
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+}
+
+.element__tag3 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 335px;
+    left: -41px;
+    width: 213.54px;
+    font-size: 12px;
+    font-family: arial;
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+}
+
+.element__tag4 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 247px;
+    left: -54px;
+    width: 213.54px;
+    font-size: 11px;
+    font-family: arial;
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+}
+
+.element__tag5 {
+    position: absolute;
+    color: #000;
+    z-index: 2;
+    top: 350px;
+    left: -67px;
+    width: 213.54px;
+    font-size: 11px;
+    font-family: arial;
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+}
+
+
+.element-avatar {
+    position: absolute;
+    top: 2px;
+    z-index: 2;
+    left: 20px;
+    width: 95px;
+    height: 120px;
+    border-radius: 5px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    border: 1px black solid;
+}
