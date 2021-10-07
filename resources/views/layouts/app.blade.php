@@ -3,7 +3,7 @@
 <!-- 
 //#===========================================================#//
 //#                     Phoenix Dashboard                     #// 
-//#                         v1.0.0.01                         #//
+//#                         v1.0.0.31                         #//
 //#===========================================================#//
 //#===========================================================#//
 //#                                                           #//
@@ -17,9 +17,9 @@
 
 @Template: Metronic - Bootstrap 4 HTML, React, Angular 11 & VueJS Admin Dashboard Theme
 @Author:   Wladi Veras
-@Website:  http://www.wladi.com.br
-@Website:  http://www.wladiveras.com 
-@Contact:  contato@wladiveras.com
+@Website:  https://www.wladiveras.com 
+@Website:  https://www.wladi.com.br
+@Contact:  hi@wladiveras.com.br
 @Follow:   www.twitter.com/wladiveras
 
 =================================================================================================================================
