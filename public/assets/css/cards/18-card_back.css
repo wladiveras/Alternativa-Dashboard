@@ -1,0 +1,71 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 90px;
+    left: 34px;
+    width: 70px;
+    height: 20px;
+    font-size: 10px;
+    color: #474747;
+    font-family: arial;
+    /*
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    white-space: pre;
+    */
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 134px;
+    left: 34px;
+    width: 70px;
+    height: 20px;
+    font-size: 10px;
+    color: #474747;
+    font-family: arial;
+    /*
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    white-space: pre;
+    */
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 90px;
+    left: 107px;
+    width: 70px;
+    height: 20px;
+    font-size: 10px;
+    color: #474747;
+    font-family: arial;
+    /*
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    white-space: pre;
+    */
+}   
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 134px;
+    left: 107px;
+    width: 70px;
+    height: 20px;
+    font-size: 10px;
+    color: #474747;
+    font-family: arial;
+    /*
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    white-space: pre;
+    */
+}   
