@@ -162,13 +162,22 @@
                                                     data-wizard-type="action-prev">Voltar</button>
                                             </div>
                                             <div>
-                                              
-                                                <button type="button"
-                                                    class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4"
-                                                    data-wizard-type="action-next">Visualizar Cartões</button>
+                                                <button 
+                                                type="button"
+                                                data-toggle="tooltip" 
+                                                data-theme="dark" 
+                                                title="Ao fazer um novo pedido, todos os antigos dados serão apagados"
+                                                class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">
+                                                    Novo Pedido
+                                                </button>
+                                                <button 
+                                                type="button"
+                                                class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4"
+                                                data-wizard-type="action-next">
+                                                    Visualizar Cartões
+                                                </button>
                                             </div>
                                         </div>
-                                    
                                     <!--end::Wizard Actions-->
                                 </div>
                                 <!--end::Wizard Form-->
@@ -179,6 +188,9 @@
                     <!--end::Wizard-->
                 </div>
                 <!--end::Wizard-->
+                <a href="https://api.whatsapp.com/send?phone=552126673060&text=*{{ $order->username }}*: preciso de ajuda com meu pedido." class="float" target="_blank">
+                    <i class="fab fa-whatsapp wp-button"></i>
+                </a>
             </div>
         </div>
         <!--end::Container-->

@@ -16,10 +16,9 @@ const rimraf = require('rimraf');
  */
 
 // Default
-global.CompilerPath = "public_html/assets/";
+global.CompilerPath = "public/assets/";
 
 mix.setPublicPath(CompilerPath);
-
 
 mix.js('resources/js/app.js', 'js')
     .postCss('resources/css/app.css', 'css', [

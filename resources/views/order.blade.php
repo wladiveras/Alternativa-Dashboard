@@ -214,6 +214,10 @@
                     <!--end::Wizard-->
                 </div>
                 <!--end::Wizard-->
+                <a href="https://api.whatsapp.com/send?phone=552126673060&text=*{{ $order->username }}*: estou preenchendo as informações e preciso de uma ajuda." class="float" target="_blank">
+                    <i class="fab fa-whatsapp wp-button"></i>
+                </a>
+
             </div>
         </div>
         <!--end::Container-->

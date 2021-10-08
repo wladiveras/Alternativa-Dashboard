@@ -18,6 +18,7 @@
         "madnest/madzipper": "^1.1",
         "milon/barcode": "^8.0",
         "pusher/pusher-php-server": "^5.0",
+        "snowfire/beautymail": "^1.1",
         "symfony/process": "^5.3"
     },
     "require-dev": {

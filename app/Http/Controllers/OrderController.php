@@ -20,7 +20,7 @@ class OrderController extends Controller
         $id = session('session_order');
         $token = session('session_token');
         
-        // Se não exister sessão
+        // Se não existe sessão
         if(!Session::has('session_order'))
         {
             // Direciona ao inicio
@@ -140,11 +140,30 @@ class OrderController extends Controller
     //Aprovação da arte
     public function aprove(Request $request)
     {
-        DB::table('alt_orders')
-          ->where('order_id', $request->input('order-id'))
-          ->update(['approved_at' => Carbon::now()]);
+        $id = $request->input('order-id');
 
-          return redirect('/');
+        DB::table('alt_orders')
+            ->where('order_id', $id)
+            ->update(
+                ['approved_at' => Carbon::now()
+            ]);
+
+        $order = 
+        DB::table('alt_orders')
+            ->where('order_id', '=', $id)
+            ->first();
+
+        //Send Email
+        $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
+        $beautymail->send('emails.approved',  ['order' => $order], function($message) use($order)
+        {
+            $message
+                ->from('hi@wladi.com.br')
+                ->to('wladinart@gmail.com', 'Alternativa')
+                ->subject($order->username .': aprovou o pedido');
+        });
+      
+        return redirect('/');
     }
 
     // Insere as informações no banco de dados
