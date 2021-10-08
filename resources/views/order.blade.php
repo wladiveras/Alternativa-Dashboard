@@ -6,7 +6,7 @@
 @endsection
 
 @section("header")
-  <!-- HEADER -->
+<!-- HEADER -->
 @endsection
 
 @section("wrapper")
@@ -20,7 +20,8 @@
                 <!--begin::Heading-->
                 <div class="d-flex flex-column">
                     <!--begin::Title-->
-                    <h2 class="text-white font-weight-bold my-2 mr-5">{{ $order->limit_count }} de {{ $order->limit }} cartões gerados</h2>
+                    <h2 class="text-white font-weight-bold my-2 mr-5">{{ $order->limit_count }} de {{ $order->limit }}
+                        cartões gerados</h2>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
                     <div class="d-flex align-items-center font-weight-bold my-2">
@@ -45,13 +46,30 @@
             </div>
             <!--end::Info-->
             <div class="d-flex align-items-center">
-                <a href="{{ $order->order_link }}" target="_blank" class="btn btn-transparent-white font-weight-bold py-3 px-6 mr-2">Proposta Comercial</a>
+                
+                <form method="POST" action="{{ route('OrderClear') }}">
+                    @csrf
+                    <input type="hidden" name="orderid" value="{{ $order->order_id }}" />
+                    <button 
+                    type="submit"  
+                    data-toggle="tooltip" 
+                    data-theme="dark"
+                    title="Todos os dados referente aos cartões serão excluidos."
+                    class="btn btn-transparent-white font-weight-bold py-3 px-6 mr-2"
+                    >
+                        <i class="la la-trash"></i> Limpar dados
+                    </button>
+                </form>
+
+                <a href="{{ $order->order_link }}" target="_blank"
+                    class="btn btn-transparent-white font-weight-bold py-3 px-6 mr-2">Proposta Comercial</a>
                 <!--begin::Desconnect-->
                 <form method="POST" action="{{ route('OrderLogout') }}">
                     @csrf
-                    <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Desconectar">
-                    
-                        <button type="submit" class="btn btn-white font-weight-bold py-3 px-6" >Sair</button>
+                    <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="" data-placement="top"
+                        data-original-title="Desconectar">
+
+                        <button type="submit" class="btn btn-white font-weight-bold py-3 px-6">Sair</button>
                     </div>
                 </form>
                 <!--end::Desconnect-->
@@ -79,7 +97,7 @@
                                     </div>
                                 </div>
                                 <!--end::Wizard Step 1 Nav-->
-        
+
                                 <!--begin::Wizard Step 3 Nav-->
                                 <div class="wizard-step" data-wizard-type="step">
                                     <div class="wizard-label">
@@ -112,10 +130,11 @@
                                                         </span>
                                                     </h3>
                                                 </div>
-                                                
+
                                                 <div class="card-toolbar">
                                                     <!--begin::Button-->
-                                                    <a class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#insert-data">
+                                                    <a class="btn btn-primary font-weight-bolder" data-toggle="modal"
+                                                        data-target="#insert-data">
                                                         <span class="svg-icon svg-icon-md">
                                                             <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
                                                             <svg xmlns="http://www.w3.org/2000/svg"
@@ -144,8 +163,11 @@
                                                 <div class="card-title">
                                                     <h3 class="card-label"><br>Informações
                                                         <span class="d-block text-muted pt-2 font-size-sm">
-                                                            <b>{{ $order->username }}</b>, você já preencheu os dados do seu pacote. Antes de aprovar, confira as informações registradas pois
-                                                            ao aprovar, o material é enviado para a produção e não será mais possivel fazer alterações nos dados informados.
+                                                            <b>{{ $order->username }}</b>, você já preencheu os dados do
+                                                            seu pacote. Antes de aprovar, confira as informações
+                                                            registradas pois
+                                                            ao aprovar, o material é enviado para a produção e não será
+                                                            mais possivel fazer alterações nos dados informados.
                                                         </span>
                                                     </h3>
                                                 </div>
@@ -176,13 +198,13 @@
                                                 <!-- Start: Card -->
                                                 @include('cards.card')
                                                 <!-- End: Card -->
-                                               
+
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
                                     <!--end::Wizard Step 2-->
-                                    
+
                                     <!--begin::Wizard Actions-->
                                     <form method="POST" action="{{ route('OrderAprove') }}" id="kt_form">
                                         @csrf
@@ -192,15 +214,24 @@
                                             <div class="mr-2">
                                                 <button type="button"
                                                     class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4"
-                                                    data-wizard-type="action-prev">Voltar</button>
+                                                    data-wizard-type="action-prev">
+                                                    Voltar
+                                                </button>
                                             </div>
                                             <div>
+
                                                 <button type="button"
                                                     class="btn btn-success font-weight-bolder text-uppercase px-9 py-4"
-                                                    data-wizard-type="action-submit">Aprovar</button>
+                                                    data-wizard-type="action-submit">
+                                                    Aprovar
+                                                </button>
+                                                @if($order->limit_count > 0)
                                                 <button type="button"
                                                     class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4"
-                                                    data-wizard-type="action-next">Proximo</button>
+                                                    data-wizard-type="action-next">
+                                                    Proximo
+                                                </button>
+                                                @endif
                                             </div>
                                         </div>
                                     </form>
@@ -214,7 +245,8 @@
                     <!--end::Wizard-->
                 </div>
                 <!--end::Wizard-->
-                <a href="https://api.whatsapp.com/send?phone=552126673060&text=*{{ $order->username }}*: estou preenchendo as informações e preciso de uma ajuda." class="float" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=552126673060&text=*{{ $order->username }}*: estou preenchendo as informações e preciso de uma ajuda."
+                    class="float" target="_blank">
                     <i class="fab fa-whatsapp wp-button"></i>
                 </a>
 
@@ -229,7 +261,8 @@
 <!-- Modal-->
 @include('cards.modal')
 
-<div class="modal fade" id="insert-csv" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+<div class="modal fade" id="insert-csv" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -246,13 +279,14 @@
                         @csrf
                         <div class="form-group mb-4" style="max-width: 500px; margin: 0 auto;">
                             <div class="custom-file text-left">
-                               
-                                <input type="hidden" name="orderid" value="{{ $order->order_id }}"/>
-                                <input type="file" name="file" class="custom-file-input" id="customFile" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+
+                                <input type="hidden" name="orderid" value="{{ $order->order_id }}" />
+                                <input type="file" name="file" class="custom-file-input" id="customFile"
+                                    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
                                 <label class="custom-file-label" for="customFile">Buscar arquivo CSV</label>
                             </div>
                         </div>
-                        
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light-primary font-weight-bold"
                                 data-dismiss="modal">Fechar</button>
@@ -260,7 +294,7 @@
                         </div>
                     </form>
                 </div>
-               
+
                 <!--end::Form-->
             </div>
 
@@ -279,24 +313,24 @@
 
 <script>
     @if(Session::get('alert-type') == 'toaster')
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-bottom-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        };
-        toastr.success("{!! Session::get('alert-response') !!}", "{!! Session::get('alert-title') !!}");
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+    toastr.success("{!! Session::get('alert-response') !!}", "{!! Session::get('alert-title') !!}");
     @endif
 
         //Validação do formulario

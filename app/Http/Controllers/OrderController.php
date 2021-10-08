@@ -13,7 +13,7 @@ use Auth;
 
 class OrderController extends Controller
 {
-    // Retorna a pagina de Pedidos
+    // @info :: Retorna a pagina de Pedidos
     public function index()
     {
         // Pega o o numero do pedido
@@ -81,7 +81,7 @@ class OrderController extends Controller
         }
     }
 
-    // Acessa o pedido
+    // @info :: Acessa o pedido
     public function Access(Request $request)
     {
         //Busca os dados no banco de dados
@@ -137,7 +137,7 @@ class OrderController extends Controller
         return redirect('/');
     }
 
-    //Aprovação da arte
+    // @info :: Aprovação da arte
     public function aprove(Request $request)
     {
         $id = $request->input('order-id');
@@ -166,7 +166,7 @@ class OrderController extends Controller
         return redirect('/');
     }
 
-    // Insere as informações no banco de dados
+    // @info :: Insere as informações no banco de dados
     public function insert(Request $request)
     {
         // Verifica se deve ignorar o avatar
@@ -198,39 +198,42 @@ class OrderController extends Controller
 
         // Insere a tabulação no banco de dados
         $add_data = 
-        DB::table('alt_orders_data')->insert([
-            
-            'order_id'     => $request->input('order-id'),
-            'front_avatar' => $avatar,
+        DB::table('alt_orders_data')
+            ->insert([
+                'order_id'     => $request->input('order-id'),
+                'front_avatar' => $avatar,
 
-            'front_input1' => $request->input('front-input-0'),
-            'front_input2' => $request->input('front-input-1'),
-            'front_input3' => $request->input('front-input-2'),
-            'front_input4' => $request->input('front-input-3'),
-            'front_input5' => $request->input('front-input-4'),
-            'front_input6' => $request->input('front-input-5'),
-            'front_input7' => $request->input('front-input-6'),
-            'front_input8' => $request->input('front-input-7'),
+                'front_input1' => $request->input('front-input-0'),
+                'front_input2' => $request->input('front-input-1'),
+                'front_input3' => $request->input('front-input-2'),
+                'front_input4' => $request->input('front-input-3'),
+                'front_input5' => $request->input('front-input-4'),
+                'front_input6' => $request->input('front-input-5'),
+                'front_input7' => $request->input('front-input-6'),
+                'front_input8' => $request->input('front-input-7'),
             
-            'back_input1' => $request->input('back-input-0'),
-            'back_input2' => $request->input('back-input-1'),
-            'back_input3' => $request->input('back-input-2'),
-            'back_input4' => $request->input('back-input-3'),
-            'back_input5' => $request->input('back-input-4'),
-            'back_input6' => $request->input('back-input-5'),
-            'back_input7' => $request->input('back-input-6'),
-            'back_input8' => $request->input('back-input-7'),
+                'back_input1' => $request->input('back-input-0'),
+                'back_input2' => $request->input('back-input-1'),
+                'back_input3' => $request->input('back-input-2'),
+                'back_input4' => $request->input('back-input-3'),
+                'back_input5' => $request->input('back-input-4'),
+                'back_input6' => $request->input('back-input-5'),
+                'back_input7' => $request->input('back-input-6'),
+                'back_input8' => $request->input('back-input-7'),
 
-            'created_at' => Carbon::now(),
-        ]);
+                'created_at' => Carbon::now(),
+            ]
+        );
 
         // Atualiza a contagem de dados
         if($add_data)
         {
-           DB::table('alt_orders')->where('order_id', $request->input('order-id'))->increment('limit_count');
+            DB::table('alt_orders')
+                ->where('order_id', $request
+                ->input('order-id'))
+                ->increment('limit_count');
         }
         
-
         //Retorna a pagina
         return redirect()->action([OrderController::class, 'index'])
             ->with('alert-type', 'toaster')
@@ -238,16 +241,43 @@ class OrderController extends Controller
             ->with('alert-response', 'As informações foram registradas com sucesso.');
     }
 
-    // Função responsavel por deletar informações do banco de dados
+    // @info :: Função responsavel por deletar informações do banco de dados
     public function delete(Request $request)
     {
         // Deleta a informação do banco de dados
-        DB::table('alt_orders_data')->where('id', '=', $request->itemid)->delete();
-        DB::table('alt_orders')->where('order_id', $request->orderid)->decrement('limit_count');
+        DB::table('alt_orders_data')
+            ->where('id', '=', $request->itemid)
+            ->delete();
+
+        DB::table('alt_orders')
+            ->where('order_id', $request->orderid)
+            ->decrement('limit_count');
+
+        return redirect()
+            ->action( [OrderController::class, 'index'] )
+            ->with('alert-type', 'toaster')
+            ->with('alert-title', 'Excluido')
+            ->with('alert-response', 'O item foi deletado com sucesso.');
+    }
+
+    
+    // @info :: Limpa todos os dados do servidor    
+    public function clear(Request $request)
+    {
+        // Clear all order data
+        DB::table('alt_orders_data')
+            ->where('order_id', '=', $request->orderid)
+            ->delete();
+        
+        DB::table('alt_orders')
+            ->where('order_id', $request->orderid)
+            ->update(
+                ['limit_count' => 0
+            ]);
 
         return redirect()->action([OrderController::class, 'index'])
-        ->with('alert-type', 'toaster')
-        ->with('alert-title', 'Excluido')
-        ->with('alert-response', 'O item foi deletado com sucesso.');
+            ->with('alert-type', 'toaster')
+            ->with('alert-title', 'Dados excluidos')
+            ->with('alert-response', 'As informações dos cartões foram excluidas do sistema.');
     }
 }

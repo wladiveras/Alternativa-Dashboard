@@ -6,7 +6,7 @@ use App\Http\Controllers\PusherNotificationController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\User;
 
-// Adiciona as rotas das paginas
+// @info :: Adiciona as rotas das paginas
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\NewOrderController;
@@ -16,8 +16,6 @@ use App\Http\Controllers\Dashboard\NewOrderController;
 | Web Routes
 |--------------------------------------------------------------------------
 */
-
-
     // ! ##############################################################
     // ! App:: Routers Management                                     #
     // ! ##############################################################
@@ -59,6 +57,10 @@ use App\Http\Controllers\Dashboard\NewOrderController;
     Route::post('/order/delete', 
         [OrderController::class, 'delete'])
         ->name('OrderDelelete');
+        
+    Route::post('/order/clear', 
+        [OrderController::class, 'clear'])
+        ->name('OrderClear');
 
     Route::post('/order/auth/access', 
         [OrderController::class, 'Access'])

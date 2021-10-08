@@ -115,7 +115,7 @@
                                                     <p>
                                                         Olá <b>{{ $order->username }}<b>, seu pedido foi aprovado e enviado para a produção.<br>
                                                         O seu produto está previsto para ser entregue aproximadamente no dia 
-                                                        <span style="color:red">{{ Carbon::createFromFormat('Y-m-d H:i:s', $order->approved_at)->addDays($order->prompt)->format('d/m/Y') }}</span>.
+                                                        <span style="color:rgb(163, 92, 92)">{{ Carbon::createFromFormat('Y-m-d H:i:s', $order->approved_at)->addDays($order->prompt)->format('d/m/Y') }}</span>.
                                                         Caso tenha alguma duvida pendente, por favor, entre em contato conosco através do numero.<br><br>
                                                         <b style="font-size:20px">(21) 2668-2128</b>
                                                     </p>
