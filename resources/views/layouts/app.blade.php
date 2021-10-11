@@ -32,7 +32,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-    <title> sDeploy - {{ env('APP_NAME') }} | {{ $title }}</title>
+    <title>  sDeploy - {{ env('APP_NAME') }} | {{ $title }}</title>
 
     <meta charset="utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
