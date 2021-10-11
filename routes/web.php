@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\User;
 
 // @info :: Adiciona as rotas das paginas
+use App\Http\Controllers\DeployController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\NewOrderController;
