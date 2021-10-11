@@ -8,5 +8,5 @@ define("GIT", "/usr/bin/git");                                         // The pa
 define("MAX_EXECUTION_TIME", 180);                                     // Override for PHP's max_execution_time (may need set in php.ini)
 define("BEFORE_PULL", "git stash");                                             // A command to execute before pulling
 define("AFTER_PULL", "");                                              // A command to execute after successfully pulling
-
+ 
 require_once("deployer.php");
