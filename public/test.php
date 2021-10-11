@@ -1,7 +1,6 @@
 <?php
 
 
-
 $NUMERO = '5521969098986';
 $ALGO =  'Olá {NOME}, seu pedido de numero {ID}, está aguardando o pagamento de {VALOR} para ser enviado.';
 
