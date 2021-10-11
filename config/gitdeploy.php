@@ -154,7 +154,7 @@ return [
     |    'secret_header' => 'X-Hub-Signature',
     */
    
-    'secret' => false,
+    'secret' => true,
 
     /**
      * plain|hmac
@@ -169,6 +169,6 @@ return [
     /**
      * The key you specified in the pushing client
      */
-    'secret_key' => '',
+    'secret_key' => env('APP_DEPLOY_SECRET'),
 
 ];
