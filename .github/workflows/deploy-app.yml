@@ -1,28 +1,21 @@
-name: Deploy Application
-
-on:
-  push:
-    branches: [ master ]
+on: 
+  push: 
+    branches:
+      - master
+name: 🚀 Deploy website on push
 
 jobs:
-  create-deployment-artifacts:
-    name: Create deployment artifacts
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
-  steps:
-  - uses: actions/checkout@v2
-  
-  - name: Compile CSS and Javascript
-    run: |
-      npm install
-      npm run prod
-
-  - name: Configure PHP 8.0
-    uses: shivammathur/setup-php@master
-    with:
-      php-version: 8.0
-      extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
-
-  - name: Composer install
-    run: |
-    composer install --no-dev --no-interaction --prefer-dist
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.ftp_server }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        server-dir: /home/alternativa.wladiveras.com/public_html/
