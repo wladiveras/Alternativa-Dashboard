@@ -35,7 +35,7 @@ use App\Http\Controllers\Dashboard\NewOrderController;
     ->name('home');
 
     // todo: Deployment by github webhook
-    Route::post('deploy', 
+    Route::get('deploy', 
         [DeployController::class, 'deploy'])
         ->name('Deployment'); 
 

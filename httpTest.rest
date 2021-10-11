@@ -1,0 +1,15 @@
+
+
+#############################
+# @name vars
+@baseUrl = http://127.0.0.1:8001/api
+
+#############################
+# @name register
+POST http://127.0.0.1:8000/deploy HTTP/1.1
+Accept: */*
+content-type: application/x-www-form-urlencoded
+
+{
+
+}
