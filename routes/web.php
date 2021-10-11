@@ -36,7 +36,7 @@ use App\Http\Controllers\Dashboard\NewOrderController;
     // todo: Deployment by github webhook
     Route::post('deploy', 
         [DeployController::class, 'deploy'])
-        ->name('Deployment');
+        ->name('Deployment'); 
 
     // ! ##############################################################
     // ! Order:: Routers Management                                   #
