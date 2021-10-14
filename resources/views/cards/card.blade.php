@@ -8,7 +8,7 @@
 @endsection
 
 @foreach($order_data as $D)
-<div class="flip-container center float-left" id="flip-toggle" ontouchstart="this.classList.toggle('hover');">
+<div class="float-left flip-container center" id="flip-toggle" ontouchstart="this.classList.toggle('hover');">
     
     <div class="flipper">
         <!-- front content -->
