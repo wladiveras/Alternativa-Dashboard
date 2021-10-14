@@ -13,72 +13,141 @@ use Auth;
 
 class OrderController extends Controller
 {
-    // @info :: Retorna a pagina de Pedidos
+    /**
+     * ! index
+     *
+     * @return void
+     */
     public function index()
     {
-        // Pega o o numero do pedido
         $id = session('session_order');
         $token = session('session_token');
         
-        // Se não existe sessão
-        if(!Session::has('session_order'))
-        {
-            // Direciona ao inicio
+        if (!Session::has('session_order')) {
             return redirect('/');
-        }
-
-        // Caso exista a sessão
-        else 
-        {
-            // Recupera as informações do pedido
+        } else {
             $order = DB::table('alt_orders')
             ->where('order_id', '=', $id)
             ->first();
 
-            // Retorna as informações fornecidas do cliente ao formulario
             $order_data = DB::table('alt_orders_data')
             ->where('order_id', '=', $id)
             ->OrderBy('id', 'desc')
             ->get();
 
-            //Recupera as informações do cartão da FRENTE
             $card_front = DB::table('alt_cards')
             ->where('id', '=', $order->id_front)
             ->first();
 
-            // Retorna a variavel
-            View::share('card_front', $card_front);
-
-            //Recupera as informações do cartão do VERSO
-            if($order->id_back > 0) 
-            {
+            if ($order->id_back > 0) {
                 $card_back = DB::table('alt_cards')
                 ->where('id', '=', $order->id_back)
                 ->first();
-
-                // Retorna a variavel
-                View::share('card_back', $card_back);
             }
            
-            // Retorna as variaveis para a template
-            View::share('order', $order);
-            View::share('order_data', $order_data);
-            
-            //Caso tenha ja tenha aprovado
-            if($order->approved_at)
-            {
-                return view('orders.approved')->with('title', 'Pedido nº '. $order->order_id);
+            $shareData =
+            [
+                'title'      => 'Pedido nº '. $order->order_id,
+                'order'      => $order,
+                'order_data' => $order_data,
+                'card_front' => $card_front,
+                'card_back'  => $card_back ?? 0,
+            ];
+
+            if ($order->approved_at) {
+                return
+                view('orders.approved')
+                ->with($shareData);
             }
 
-            //Caso a pagina ja tenha expirado
-            if($order->expire_at < Carbon::now())
-            {
-                return view('orders.expired')->with('title', 'Pedido nº '. $order->order_id);
-            }
+            // if ($order->expire_at < Carbon::now()) {
+            //     return
+            //     view('orders.expired')
+            //     ->with($shareData);
+            // }
 
-            // Retorna a template
-            return view('order')->with('title', 'Pedido nº '. $order->order_id);
+            return
+            view('order')
+            ->with($shareData);
         }
+    }
+
+    /**
+     * ! renew
+     *
+     * @return void
+     */
+    public function renew()
+    {
+        $id = session('session_order');
+        $token = session('session_token');
+    
+        if (!Session::has('session_order')) {
+            return redirect('/');
+        } else {
+            $order = DB::table('alt_orders')
+            ->where('order_id', '=', $id)
+            ->first();
+
+            if ($order->limit_count < $order->limit) {
+                return redirect('/');
+            }
+
+            $order_data = DB::table('alt_orders_data')
+            ->where('order_id', '=', $id)
+            ->OrderBy('id', 'desc')
+            ->get();
+
+            $shareData =
+            [
+                'title'      => 'Pedido nº '. $order->order_id,
+                'order'      => $order,
+                'order_data' => $order_data,
+            ];
+
+            return
+                view('orders.renew')
+                ->with($shareData);
+        }
+    }
+
+    public function renewRequest(Request $request)
+    {
+        DB::table('alt_orders')
+        ->where('order_id', $request->order_id)
+        ->update([
+            'description' => $request->description,
+            'limit' => $request->amount,
+            'limit_count' => 0,
+            'renew_at' => Carbon::now(),
+            'ready_at' => null,
+            'approved_at' => null
+        ]);
+
+        DB::table('alt_orders_data')
+        ->where('order_id', '=', $request->order_id)
+        ->delete();
+        
+        $order =
+            DB::table('alt_orders')
+            ->where('order_id', '=', $request->order_id)
+            ->first();
+
+        //Send Email
+        $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
+        $beautymail->send('emails.renew', ['order' => $order], function ($message) {
+            $message
+                     ->from('hi@wladi.com.br')
+                     ->to('contato@alternativacard.com', 'Alternativa')
+                     ->subject('Recorrência: novo pedido');
+        });
+
+        return redirect()->action([OrderController::class, 'index'])
+        ->with([
+            'alert-type'     => 'toaster',
+            'alert-title'    => 'Pedido recriado',
+            'alert-response' => 'Um novo pedido foi iniciado com sucesso',
+        ]);
     }
 
     // @info :: Acessa o pedido
@@ -95,8 +164,7 @@ class OrderController extends Controller
         $Logged = false;
 
         // Lista os objetos
-        foreach($orderQuery as $O)
-        {
+        foreach ($orderQuery as $O) {
             $Logged = true;
             $order->id = $O->order_id;
             $order->tk = $O->token;
@@ -104,17 +172,15 @@ class OrderController extends Controller
         }
 
         //Caso de error
-        if(!$Logged) 
-        {
+        if (!$Logged) {
             return redirect('/')
                 ->with('alert-type', 'toaster')
                 ->with('alert-title', 'Falha')
                 ->with('alert-response', 'Não foi possivel identificar seu pedido');
-        } 
+        }
 
         //Caso encontre o pedido
-        else 
-        {
+        else {
             //Gen Session
             session(['session_order' => $order->id]);
             session(['session_token' => $order->tk]);
@@ -146,20 +212,20 @@ class OrderController extends Controller
             ->where('order_id', $id)
             ->update(
                 ['approved_at' => Carbon::now()
-            ]);
+            ]
+            );
 
-        $order = 
+        $order =
         DB::table('alt_orders')
             ->where('order_id', '=', $id)
             ->first();
 
         //Send Email
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
-        $beautymail->send('emails.approved',  ['order' => $order], function($message) use($order)
-        {
+        $beautymail->send('emails.approved', ['order' => $order], function ($message) use ($order) {
             $message
                 ->from('hi@wladi.com.br')
-                ->to('wladinart@gmail.com', 'Alternativa')
+                ->to('contato@alternativacard.com', 'Alternativa')
                 ->subject($order->username .': aprovou o pedido');
         });
       
@@ -170,16 +236,14 @@ class OrderController extends Controller
     public function insert(Request $request)
     {
         // Verifica se deve ignorar o avatar
-        if($request->input('ignore-avatar') == 1)
-        {
-           $avatar = null;
+        if ($request->input('ignore-avatar') == 1) {
+            $avatar = null;
         }
 
         // Se não ignorar, invoca o arquivo
-        else 
-        {
-             // Valida o avatar
-             $request->validate([
+        else {
+            // Valida o avatar
+            $request->validate([
                 'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
         
@@ -188,8 +252,7 @@ class OrderController extends Controller
             $avatar = null;
 
             //Verifica se existe a imagem define um nome e move para a pasta correta
-            if ($file = $request->file('avatar')) 
-            {
+            if ($file = $request->file('avatar')) {
                 //Cria um diretorio novo para o tipo de pedido
                 $avatar = md5(date('YmdHis')). "." . $file->getClientOriginalExtension();
                 $file->move('assets/media/users/'.$request->input('order-id').'/', $avatar);
@@ -197,9 +260,10 @@ class OrderController extends Controller
         }
 
         // Insere a tabulação no banco de dados
-        $add_data = 
+        $add_data =
         DB::table('alt_orders_data')
-            ->insert([
+            ->insert(
+                [
                 'order_id'     => $request->input('order-id'),
                 'front_avatar' => $avatar,
 
@@ -223,11 +287,10 @@ class OrderController extends Controller
 
                 'created_at' => Carbon::now(),
             ]
-        );
+            );
 
         // Atualiza a contagem de dados
-        if($add_data)
-        {
+        if ($add_data) {
             DB::table('alt_orders')
                 ->where('order_id', $request
                 ->input('order-id'))
@@ -254,14 +317,14 @@ class OrderController extends Controller
             ->decrement('limit_count');
 
         return redirect()
-            ->action( [OrderController::class, 'index'] )
+            ->action([OrderController::class, 'index'])
             ->with('alert-type', 'toaster')
             ->with('alert-title', 'Excluido')
             ->with('alert-response', 'O item foi deletado com sucesso.');
     }
 
     
-    // @info :: Limpa todos os dados do servidor    
+    // @info :: Limpa todos os dados do servidor
     public function clear(Request $request)
     {
         // Clear all order data
@@ -271,8 +334,8 @@ class OrderController extends Controller
         
         DB::table('alt_orders')
             ->where('order_id', $request->orderid)
-            ->update(
-                ['limit_count' => 0
+            ->update([
+                'limit_count' => 0
             ]);
 
         return redirect()->action([OrderController::class, 'index'])
