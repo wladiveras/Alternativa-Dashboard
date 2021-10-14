@@ -70,13 +70,13 @@ class NewOrderController extends Controller
     // Download Orders Assets
     public function DownloadOrders($orderid)
     {
-        $files = glob('public_html/assets/media/users/'.$orderid.'/*');
+        $files = glob('public/assets/media/users/'.$orderid.'/*');
        
         $zip_file = $orderid."_assets.zip";
     
         $zip = new \ZipArchive();
         $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
-        $path = base_path('public_html/assets/media/users/'.$orderid);
+        $path = base_path('public/assets/media/users/'.$orderid);
 
         $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
 
