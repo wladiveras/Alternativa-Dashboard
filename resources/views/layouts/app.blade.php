@@ -8,11 +8,11 @@
 //#===========================================================#//
 //#                                                           #//
 //#                                                           #//
-//#                   🆂🅾🆄🅻 🅽🅴🆃🆆🅾🆁🅺                    #//  
+//#                   🆂🅾🆄🅻 🅽🅴🆃🆆🅾🆁🅺                     #//  
 //#                                                           #//
 //#                 Copyright (C) 2016 - 2021                 #//
 //#                                                           #//
-//#        ▁ ▂ ▄ ▅ ▆ ▇ █ Wladi  Veras █ ▇ ▆ ▅ ▄ ▂ ▁       #//
+//#          ▁ ▂ ▄ ▅ ▆ ▇ █ Wladi  Veras █ ▇ ▆ ▅ ▄ ▂ ▁         #//
 //#===========================================================#//
 
 @Template: Metronic - Bootstrap 4 HTML, React, Angular 11 & VueJS Admin Dashboard Theme
@@ -32,7 +32,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-    <title>kkk xDeploy - {{ env('APP_NAME') }} | {{ $title }}</title>
+    <title>{{ env('APP_NAME') }} | {{ $title }}</title>
 
     <meta charset="utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -69,7 +69,6 @@
 </head>
 <!--end::Head-->
 <!--begin::Body-->
-
 <body id="kt_body" style="background-image: url({{ asset('assets/media/bg/bg-10.jpg') }})"
     class="quick-panel-right demo-panel-right offcanvas-right header-fixed subheader-enabled page-loading">
     <!--begin::Main-->
@@ -240,11 +239,9 @@
     </script>
     @endif
 
-
     <!--begin::Page Scripts(used by this page)-->
     @yield("script")
     <!--end::Page Scripts-->
 </body>
 <!--end::Body-->
-
 </html>

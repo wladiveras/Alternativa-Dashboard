@@ -219,12 +219,30 @@
                                                 </button>
                                             </div>
                                             <div>
-
-                                                <button type="button"
-                                                    class="btn btn-success font-weight-bolder text-uppercase px-9 py-4"
-                                                    data-wizard-type="action-submit">
-                                                    Aprovar
+                                                @if($order->limit_count >= $order->limit)
+                                                <button 
+                                                type="button"
+                                                class="btn btn-success font-weight-bolder text-uppercase px-9 py-4"
+                                                data-wizard-type="action-submit"
+                                                >
+                                                    Aprovar pedido
                                                 </button>
+                                                @else
+                                                <div 
+                                                class="tooltip-wrapper disabled" 
+                                                data-title="Preencha o restante dos dados para liberar a aprovação do pedido"
+                                                >
+                                                    <button 
+                                                    type="button"
+                                                    class="btn btn-disabled font-weight-bolder text-uppercase px-9 py-4"
+                                                    data-wizard-type="action-submit"
+                                                    disabled
+                                                    >
+                                                        Aprovar pedido
+                                                    </button>
+                                                </div>
+                                                @endif
+
                                                 @if($order->limit_count > 0)
                                                 <button type="button"
                                                     class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4"

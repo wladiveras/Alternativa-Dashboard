@@ -162,14 +162,15 @@
                                                     data-wizard-type="action-prev">Voltar</button>
                                             </div>
                                             <div>
-                                                <button 
+                                                <a 
+                                                href="{{ route('OrderRenew') }}"
                                                 type="button"
                                                 data-toggle="tooltip" 
                                                 data-theme="dark" 
                                                 title="Ao fazer um novo pedido, todos os antigos dados serão apagados"
                                                 class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">
                                                     Novo Pedido
-                                                </button>
+                                                </a>
                                                 <button 
                                                 type="button"
                                                 class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4"

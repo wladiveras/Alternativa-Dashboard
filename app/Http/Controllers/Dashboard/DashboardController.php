@@ -11,22 +11,37 @@ use Auth;
 
 class DashboardController extends Controller
 {
+    /**
+     * ! index
+     *
+     *  @return view
+     */
+
     public function index()
     {
-        // Lista os pedidos novos
-        View::share('orders',      
+        $orders_doing =
             DB::table('alt_orders')
-            //->whereNull('approved_at')
+            ->whereNull('approved_at')
             ->whereDate('expire_at', '>=', Carbon::now())
             ->OrderBy('id', 'desc')
-            ->get()
-        );
+            ->get();
+            
+        $orders_ready =
+            DB::table('alt_orders')
+            ->whereNotNull('approved_at')
+            ->whereNull('ready_at')
+            ->whereDate('expire_at', '>=', Carbon::now())
+            ->OrderBy('id', 'desc')
+            ->get();
 
-        View::share('orders_count', DB::table('alt_orders')->count());
-        View::share('cards_count',  DB::table('alt_orders_data')->count());
-
-        return view('dashboard.index')->with('title', 'Dashboard');
+        return
+            view('dashboard.index')
+            ->with([
+                'title'        => 'Phoenix Dashboard',
+                'order_doing'  => $orders_doing,
+                'order_ready'  => $orders_ready,
+                'orders_count' => DB::table('alt_orders')->count(),
+                'cards_count'  => DB::table('alt_orders_data')->count(),
+            ]);
     }
-
-
 }

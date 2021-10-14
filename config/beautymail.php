@@ -14,21 +14,20 @@ return [
 
         'highlight' => '#004ca3',
         'button'    => '#004cad',
-
     ],
-
+ 
     'view' => [
         'senderName'  => null,
         'reminder'    => null,
         'unsubscribe' => null,
         'address'     => null,
 
-        'logo'        => [
+        'logo'       => [
             'path'   => '%PUBLIC%/assets/media/logos/logo.png',
             'width'  => '',
             'height' => '',
         ],
-
+        
         'twitter'  => null,
         'facebook' => null,
         'flickr'   => null,

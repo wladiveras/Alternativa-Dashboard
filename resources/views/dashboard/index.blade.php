@@ -53,97 +53,8 @@
             <!--begin::Dashboard-->
             <!--begin::Row-->
             <div class="row">
-                <div class="col-xl-4">
-                    <!--begin::Tiles Widget 1-->
-                    <div class="card card-custom gutter-b card-stretch">
-                        <!--begin::Header-->
-                        <div class="card-header border-0 pt-5">
-                            <div class="card-title">
-                                <div class="card-label">
-                                    <div class="font-weight-bolder">Prioridade</div>
-                                    <div class="font-size-sm text-muted mt-2">Material com urgencia</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Body-->
-                        <div class="card-body d-flex flex-column px-0">
-                            <!--begin::Chart-->
-                            <div id="kt_tiles_widget_1_chart" data-color="danger" style="height: 125px"></div>
-                            <!--end::Chart-->
-                            <!--begin::Items-->
-                            <div class="flex-grow-1 card-spacer-x">
-                                <!--begin::Item-->
-                                <div class="d-flex align-items-center justify-content-between mb-10">
-                                    <div class="d-flex align-items-center mr-2">
-                                        <div class="symbol symbol-50 symbol-light mr-3 flex-shrink-0">
-                                            <div class="symbol-label">
-                                                <img src="assets/media/svg/misc/006-plurk.svg" alt="" class="h-50" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <a href="#"
-                                                class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Escola
-                                                da Maria Joana</a>
-                                            <div class="font-size-sm text-muted font-weight-bold mt-1">#4059 - 905
-                                                Cartões, 30 cordões</div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="label label-light label-inline font-weight-bold text-dark-50 py-4 px-3 font-size-base">
-                                        Vencido</div>
-                                </div>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <div class="d-flex align-items-center justify-content-between mb-10">
-                                    <div class="d-flex align-items-center mr-2">
-                                        <div class="symbol symbol-50 symbol-light mr-3 flex-shrink-0">
-                                            <div class="symbol-label">
-                                                <img src="assets/media/svg/misc/006-plurk.svg" alt="" class="h-50" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <a href="#"
-                                                class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Escola
-                                                da Maria Joana</a>
-                                            <div class="font-size-sm text-muted font-weight-bold mt-1">#4059 - 905
-                                                Cartões, 30 cordões</div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="label label-light label-inline font-weight-bold text-dark-50 py-4 px-3 font-size-base">
-                                        Atraso</div>
-                                </div>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <div class="d-flex align-items-center justify-content-between mb-10">
-                                    <div class="d-flex align-items-center mr-2">
-                                        <div class="symbol symbol-50 symbol-light mr-3 flex-shrink-0">
-                                            <div class="symbol-label">
-                                                <img src="assets/media/svg/misc/006-plurk.svg" alt="" class="h-50" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <a href="#"
-                                                class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Escola
-                                                da Maria Joana</a>
-                                            <div class="font-size-sm text-muted font-weight-bold mt-1">#4059 - 905
-                                                Cartões, 30 cordões</div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="label label-light label-inline font-weight-bold text-dark-50 py-4 px-3 font-size-base">
-                                        Atraso</div>
-                                </div>
-                                <!--end::Item-->
-                            </div>
-                            <!--end::Items-->
-                        </div>
-                        <!--end::Body-->
-                    </div>
-                    <!--end::Tiles Widget 1-->
-                </div>
-                <div class="col-xl-8">
+
+                <div class="col-xl-12">
 
                     <div class="row">
 
@@ -232,9 +143,10 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 py-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label font-weight-bolder text-dark">Status de Pedidos</span>
-                                        <span class="text-muted mt-3 font-weight-bold font-size-sm">Pedidos não
-                                            aprovados em andamento</span>
+                                        <span class="card-label font-weight-bolder text-dark">Prontos para Produção</span>
+                                        <span class="text-muted mt-3 font-weight-bold font-size-sm">
+                                            Pedidos prontos para impressão
+                                        </span>
                                     </h3>
                                     <div class="card-toolbar">
                                         <a href="{{ route('dash:card_front') }}" class="btn btn-success font-weight-bolder font-size-sm">
@@ -274,7 +186,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach ( $orders as $O)
+                                            @foreach ( $order_ready as $O)
                                                 <tr>
                                                     <td class="pr-0">
                                                         <div class="symbol symbol-50 symbol-light mt-1">
@@ -322,23 +234,70 @@
                                                         </div>
                                                     </td>
                                                     <td class="pr-0 text-right">
-                                                        <a href="{{ route('OrdersExport', ['id' => $O->order_id]) }}"
-                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm">
+                                                        <a 
+                                                            href="{{ route('OrdersExport', ['id' => $O->order_id]) }}"
+                                                            data-theme="dark"
+                                                            data-toggle="tooltip"
+                                                            title="Baixar CSV"
+                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm"
+                                                        >
                                                             <span class="svg-icon svg-icon-md svg-icon-primary">
                                                                 <i class="fas fa-file-csv"></i>
                                                             </span>
                                                         </a>
-                                                        <a href="{{ route('OrdersDownload', ['id' => $O->order_id]) }}"
-                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                                                        <a 
+                                                            data-theme="dark"
+                                                            data-toggle="tooltip"
+                                                            title="Baixar imagens"
+                                                            href="{{ route('OrdersDownload', ['id' => $O->order_id]) }}"
+                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
+                                                        >
                                                             <span class="svg-icon svg-icon-md svg-icon-primary">
                                                                 <i class="fas fa-image"></i>
                                                             </span>
                                                         </a>
-                                                        <a href="#"
-                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm">
+                                                        <a  
+                                                            href="#"
+                                                            data-theme="dark"
+                                                            data-toggle="tooltip"
+                                                            title="Editar pedido"
+                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm"
+                                                        >
                                                             <span class="svg-icon svg-icon-md svg-icon-primary">
                                                                 <i class="fas fa-edit"></i>
                                                             </span>
+                                                        </a>
+                                                        <a 
+                                                            href="#"
+                                                            data-theme="dark"
+                                                            data-toggle="tooltip"
+                                                            title="Excluir pedido"
+                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm"
+                                                        >
+                                                            <span class="svg-icon svg-icon-md svg-icon-primary">
+                                                                <i class="fas fa-trash"></i>
+                                                            </span>
+                                                        </a>
+                                                     
+                                                      
+                                                        </a>
+                                                        <a>
+                                                        <form style="display:inline" method="POST" action="{{ route('OrdersComplete') }}">
+                                                            @csrf
+                                                            <input type="hidden" name="orderid" value="{{ $O->order_id }}" />
+                                                            <button 
+                                                            type="submit" 
+                                                            class="btn btn-sm btn-clean btn-icon" 
+                                                            data-theme="dark"
+                                                            data-toggle="tooltip"
+                                                            title="Concluir Pedido"
+                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm"
+                                                            >
+                                                            <span class="svg-icon svg-icon-md svg-icon-primary">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            </button>
+                                                        </form>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -353,6 +312,122 @@
                             </div>
                             <!--end::Advance Table Widget 1-->
                         </div>
+
+
+                        <div class="col-lg-6 col-xxl-12">
+                            <!--begin::Advance Table Widget 1-->
+                            <div class="card card-custom card-stretch gutter-b">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 py-5">
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label font-weight-bolder text-dark">Aguardando aprovação </span>
+                                        <span class="text-muted mt-3 font-weight-bold font-size-sm">Pedidos aguardando aprovação</span>
+                                    </h3>
+                        
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-0">
+                                    <!--begin::Table-->
+                                    <div class="table-responsive">
+                                        <table class="table table-head-custom table-vertical-center"
+                                            id="kt_advance_table_widget_1">
+                                            <thead>
+                                                <tr class="text-left">
+                                                    <th class="pr-0" style="width: 50px">Cliente</th>
+                                                    <th style="min-width: 200px"></th>
+                                                    <th style="min-width: 150px">Pedido</th>
+                                                    <th style="min-width: 150px">Progresso</th>
+                                                    <th class="pr-0 text-right" style="min-width: 150px">Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ( $order_doing as $O)
+                                                <tr>
+                                                    <td class="pr-0">
+                                                        <div class="symbol symbol-50 symbol-light mt-1">
+                                                            <span class="symbol-label">
+                                                                <img src="assets/media/svg/avatars/001-boy.svg"
+                                                                    class="h-75 align-self-end" alt="" />
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="pl-0">
+                                                        <a href="#"
+                                                            class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{ $O->username }}</a>
+                                                        <span
+                                                            class="text-muted font-weight-bold text-muted d-block">{{ $O->token }}</span>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="text-dark-75 font-weight-bolder d-block font-size-lg">Nº
+                                                            #{{ $O->order_id }}</span>
+                                                        <span class="text-muted font-weight-bold">{{ $O->limit }} Cartões</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column w-100 mr-2">
+                                                            <div
+                                                                class="d-flex align-items-center justify-content-between mb-2">
+                                                                <span
+                                                                    class="text-muted mr-2 font-size-sm font-weight-bold">{{ Wladi::Percent($O->limit_count, $O->limit) }}%</span>
+                                                                <span
+                                                                    class="text-muted font-size-sm font-weight-bold">finalizado</span>
+                                                            </div>
+                                                            <div class="progress progress-xs w-100">
+                                                                <div class="progress-bar 
+                                                                    @if(Wladi::Percent($O->limit_count, $O->limit) >= 80.00)
+                                                                    bg-success
+                                                                    @elseif(Wladi::Percent($O->limit_count, $O->limit) >= 50.00)
+                                                                    bg-primary
+                                                                    @else
+                                                                    bg-danger
+                                                                    @endif" 
+                                                                    role="progressbar"
+                                                                    style="width: {{ Wladi::Percent($O->limit_count, $O->limit) }}%;"
+                                                                    aria-valuenow="50" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="pr-0 text-right">
+                                                       
+                                                        <a  
+                                                            href="#"
+                                                            data-theme="dark"
+                                                            data-toggle="tooltip"
+                                                            title="Editar pedido"
+                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm"
+                                                        >
+                                                            <span class="svg-icon svg-icon-md svg-icon-primary">
+                                                                <i class="fas fa-edit"></i>
+                                                            </span>
+                                                        </a>
+                                                        <a 
+                                                            href="#"
+                                                            data-theme="dark"
+                                                            data-toggle="tooltip"
+                                                            title="Excluir pedido"
+                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm"
+                                                        >
+                                                            <span class="svg-icon svg-icon-md svg-icon-primary">
+                                                                <i class="fas fa-trash"></i>
+                                                            </span>
+                                                        </a>
+                                                    
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--end::Table-->
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Advance Table Widget 1-->
+                        </div>
+
+
 
                     </div>
                 </div>

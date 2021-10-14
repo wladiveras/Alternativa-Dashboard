@@ -114,7 +114,7 @@
                                             </span>
                                         </div>
                                         <div class="wizard-label">
-                                            <h3 class="wizard-title">Finalizado!</h3>
+                                            <h3 class="wizard-title">Resumo</h3>
                                             <div class="wizard-desc">Resumir e Confirmar</div>
                                         </div>
                                     </div>
@@ -151,46 +151,24 @@
                                                         class="form-control form-control-solid form-control-lg"
                                                         name="order_email" value="" />
                                                 </div>
-
                                             </div>
 
-
-
-                                            <div class="form-group">
-                                                <label>Titulo do Pedido</label>
-                                                <input type="text"
-                                                    class="form-control form-control-solid form-control-lg"
-                                                    name="order_name" value="" />
-                                            </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
-                                            <div class="form-group">
-                                                <label>Descrição do Pedido</label>
-                                                <input type="text"
-                                                    class="form-control form-control-solid form-control-lg"
-                                                    name="order_desc" value="" />
-                                            </div>
-                                            <!--end::Input-->
                                             <div class="row">
                                                 <div class="col-xl-6">
                                                     <!--begin::Input-->
                                                     <div class="form-group">
-                                                        <label>Vendedor</label>
-                                                        <input type="text"
-                                                            class="form-control form-control-solid form-control-lg"
-                                                            name="order_seller" value="" />
-                                                    </div>
-                                                    <!--end::Input-->
-                                                </div>
-                                                <div class="col-xl-6">
-                                                    <!--begin::Input-->
-                                                    <div class="form-group">
-                                                        <label>Numero do pedido</label>
+                                                        <label>CPF/CNPJ</label>
                                                         <input type="number"
                                                             class="form-control form-control-solid form-control-lg"
                                                             name="order_number" value="" />
                                                     </div>
                                                     <!--end::Input-->
+                                                </div>
+                                                <div class="form-group col-xl-6">
+                                                    <label>Prazo de entrega após aprovar (dias)</label>
+                                                    <input type="number"
+                                                        class="form-control form-control-solid form-control-lg"
+                                                        name="order_time" value="7" />
                                                 </div>
                                             </div>
 
@@ -214,23 +192,6 @@
                                                             name="order_limit" value="" />
                                                     </div>
                                                     <!--end::Input-->
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="form-group col-xl-6">
-                                                    <label>Prazo de entrega após aprovar (dias)</label>
-                                                    <input type="number"
-                                                        class="form-control form-control-solid form-control-lg"
-                                                        name="order_time" value="7" />
-                                                </div>
-
-                                                <div class="form-group col-xl-6">
-                                                    <label>Leitor de Codigo</label>
-                                                    <select name="order_code" class="form-control">
-                                                        <option value="0">Sem Leitor</option>
-                                                        <option value="I25">Codigo de Barras(l25)</option>
-                                                    </select>
                                                 </div>
                                             </div>
 
@@ -309,7 +270,7 @@
     <!--end::Entry-->
 </div>
 @endsection
-
+<!-- test -->
 @section("script")
 <script src="{{ asset('assets/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js') }}"></script>
 <script src="{{ asset('assets/js/pages/custom/wizard/wizard-2.js') }}"></script>

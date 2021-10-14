@@ -14,11 +14,9 @@ use Carbon\Carbon;
 use View;
 use Auth;
 
-
-
 class NewOrderController extends Controller
 {
-     // Controlador da pagina principal
+    // Controlador da pagina principal
     public function index($front, $back)
     {
         View::share('front', $front);
@@ -36,18 +34,17 @@ class NewOrderController extends Controller
 
         $files = $request->file('artwork');
 
-        foreach($files as $key => $file)
-        {
-             // Cria um diretorio novo para o tipo de pedido
-             $art[$key] = md5($key.date('YmdHis')). "." . $file->getClientOriginalExtension();
-             $file->move('assets/media/cards/uploads/'.$request->input('order_number').'/', $art[$key]);
+        foreach ($files as $key => $file) {
+            // Cria um diretorio novo para o tipo de pedido
+            $art[$key] = md5($key.date('YmdHis')). "." . $file->getClientOriginalExtension();
+            $file->move('assets/media/cards/uploads/'.$request->input('order_number').'/', $art[$key]);
         }
 
         // Insere as informações no banco de dados
         DB::table('alt_orders')->insert([
             'order_id'    => $request->input('order_number'),
             'order_link'  => $request->input('order_bling'),
-            'salesman'    => $request->input('order_seller'),
+            'salesman'    => Auth::user()->name,
             'username'    => $request->input('order_client'),
             'title'       => $request->input('order_name'),
             'description' => $request->input('order_desc'),
@@ -67,7 +64,7 @@ class NewOrderController extends Controller
         return redirect()->action([DashboardController::class, 'index'])
         ->with('alert-type', 'success')
         ->with('alert-title', 'Ordem de Pedido #'.$request->input('order_number'))
-        ->with('alert-response', 'Ordem de pedido criada com sucesso.<br>Email de acesso: <b>'.$request->input('order_number').'</b><br>Senha de Acesso: <b>'.$request->input('order_email').'</b>');
+        ->with('alert-response', 'Ordem de pedido criada com sucesso.<br>Email de acesso: <b>'.$request->input('order_email').'</b><br>Senha de Acesso: <b>'.$request->input('order_number').'</b>');
     }
 
     // Download Orders Assets
@@ -83,10 +80,8 @@ class NewOrderController extends Controller
 
         $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
 
-        foreach ($files as $name => $file)
-        {
-            if (!$file->isDir()) 
-            {
+        foreach ($files as $name => $file) {
+            if (!$file->isDir()) {
                 $filePath     = $file->getRealPath();
             
                 // Extrai os arquivos
@@ -99,26 +94,37 @@ class NewOrderController extends Controller
         $zip->close();
         
         return response()->download($zip_file);
-
     }
 
     //Import orders data
-    public function ImportOrders(Request $request) 
+    public function ImportOrders(Request $request)
     {
         Excel::import(new OrdersImport($request->orderid), $request->file('file')->store('temp'));
         return back();
     }
 
+    public function endOrder(Request $request)
+    {
+        DB::table('alt_orders')
+        ->where('order_id', $request->orderid)
+        ->update([
+            'ready_at' => Carbon::now(),
+        ]);
+
+        return redirect()->action([DashboardController::class, 'index'])
+        ->with('alert-type', 'toaster')
+        ->with('alert-title', 'Finalizado')
+        ->with('alert-response', 'Foi registrado a conclusão do pedido');
+    }
+
     //Export Orders data
     public function ExportOrders($orderid)
     {
-        //Retorna os dados do banco de dados
         $QueryOrders = DB::table('alt_orders_data')
         ->where('order_id', $orderid)
         ->OrderBy('id', 'desc')
         ->get();
 
-        // Instancia as variaveis
         $avatar  = null;
         $front_1 = null;
         $front_2 = null;
@@ -137,29 +143,61 @@ class NewOrderController extends Controller
         $back_7 = null;
         $back_8 = null;
 
-        foreach ($QueryOrders as $O) 
-        {
-            //Define o titulo da ARRAY
-            if(!is_null($O->front_avatar)) { $avatar = '@PHOTO'; }
-            if(!is_null($O->front_input1)) { $front_1 = 'frente_1'; }
-            if(!is_null($O->front_input2)) { $front_2 = 'frente_2'; }
-            if(!is_null($O->front_input3)) { $front_3 = 'frente_3'; }
-            if(!is_null($O->front_input4)) { $front_4 = 'frente_4'; }
-            if(!is_null($O->front_input5)) { $front_5 = 'frente_5'; }
-            if(!is_null($O->front_input6)) { $front_6 = 'frente_6'; }
-            if(!is_null($O->front_input7)) { $front_7 = 'frente_7'; }
-            if(!is_null($O->front_input8)) { $front_8 = 'frente_8'; }
-            if(!is_null($O->back_input1))  { $back_1  = 'verso_1';  }
-            if(!is_null($O->back_input2))  { $back_2  = 'verso_2';  }
-            if(!is_null($O->back_input3))  { $back_3  = 'verso_3';  }
-            if(!is_null($O->back_input4))  { $back_4  = 'verso_4';  }
-            if(!is_null($O->back_input5))  { $back_5  = 'verso_5';  }
-            if(!is_null($O->back_input6))  { $back_6  = 'verso_6';  }
-            if(!is_null($O->back_input7))  { $back_7  = 'verso_7';  }
-            if(!is_null($O->back_input8))  { $back_8  = 'verso_8';  }
+        foreach ($QueryOrders as $O) {
+            if (!is_null($O->front_avatar)) {
+                $avatar = '@PHOTO';
+            }
+            if (!is_null($O->front_input1)) {
+                $front_1 = 'frente_1';
+            }
+            if (!is_null($O->front_input2)) {
+                $front_2 = 'frente_2';
+            }
+            if (!is_null($O->front_input3)) {
+                $front_3 = 'frente_3';
+            }
+            if (!is_null($O->front_input4)) {
+                $front_4 = 'frente_4';
+            }
+            if (!is_null($O->front_input5)) {
+                $front_5 = 'frente_5';
+            }
+            if (!is_null($O->front_input6)) {
+                $front_6 = 'frente_6';
+            }
+            if (!is_null($O->front_input7)) {
+                $front_7 = 'frente_7';
+            }
+            if (!is_null($O->front_input8)) {
+                $front_8 = 'frente_8';
+            }
+            if (!is_null($O->back_input1)) {
+                $back_1  = 'verso_1';
+            }
+            if (!is_null($O->back_input2)) {
+                $back_2  = 'verso_2';
+            }
+            if (!is_null($O->back_input3)) {
+                $back_3  = 'verso_3';
+            }
+            if (!is_null($O->back_input4)) {
+                $back_4  = 'verso_4';
+            }
+            if (!is_null($O->back_input5)) {
+                $back_5  = 'verso_5';
+            }
+            if (!is_null($O->back_input6)) {
+                $back_6  = 'verso_6';
+            }
+            if (!is_null($O->back_input7)) {
+                $back_7  = 'verso_7';
+            }
+            if (!is_null($O->back_input8)) {
+                $back_8  = 'verso_8';
+            }
 
             // Instancia a variavel
-            $data[] = 
+            $data[] =
                 array(
                     (!is_null($avatar))  ? ($avatar)  : "" => (!is_null($O->front_avatar)) ? ($O->front_avatar) : "",
                     (!is_null($front_1)) ? ($front_1) : "" => (!is_null($O->front_input1)) ? ($O->front_input1) : "",
@@ -214,6 +252,4 @@ class NewOrderController extends Controller
 
         return view('dashboard.order/cards')->with('title', env('APP_DEV').' Dashboard');
     }
-
-
 }

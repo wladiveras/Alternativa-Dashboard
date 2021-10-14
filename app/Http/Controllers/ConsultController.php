@@ -34,7 +34,6 @@ class ConsultController extends Controller
 
         // Retorna a template
         return view('consult')->with('title', 'Um pequeno titulo para a pagina');
-
     }
 
     // Função Post para buscar clientes atraves do INPUT da TopBar.
@@ -87,5 +86,4 @@ class ConsultController extends Controller
             ->with('alert-title', 'Tabução Concluida')
             ->with('alert-response', 'Olá, <b>' . Auth::user()->name . '</b>, as informações foram registrados com sucesso.');
     }
-
 }

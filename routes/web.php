@@ -12,7 +12,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\NewOrderController;
 
-/*  
+/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -21,12 +21,10 @@ use App\Http\Controllers\Dashboard\NewOrderController;
     // ! App:: Routers Management                                     #
     // ! ##############################################################
 
-    Route::get('/', function () 
-    {
+    Route::get('/', function () {
         $id = session('session_order');
 
-        if($id)
-        {
+        if ($id) {
             return redirect('/order');
         }
 
@@ -35,44 +33,71 @@ use App\Http\Controllers\Dashboard\NewOrderController;
     ->name('home');
 
     // todo: Deployment by github webhook
-    Route::get('deploy', 
-        [DeployController::class, 'deploy'])
-        ->name('Deployment'); 
+    Route::get(
+        'deploy',
+        [DeployController::class, 'deploy']
+    )
+        ->name('Deployment');
 
     // ! ##############################################################
     // ! Order:: Routers Management                                   #
     // ! ##############################################################
 
-    Route::get('/order', 
-        [OrderController::class, 'index'])
-        ->name('Order');
+    Route::get(
+        '/order',
+        [OrderController::class, 'index']
+    )
+    ->name('Order');
 
-    Route::post('/order/aprove', 
-        [OrderController::class, 'aprove'])
-        ->name('OrderAprove');
+    Route::get(
+        '/order/renew',
+        [OrderController::class, 'renew']
+    )
+    ->name('OrderRenew');
 
-    Route::post('/order/insert', [
-        OrderController::class, 'insert'])
-        ->name('OrderInsert');
-
-    Route::post('/order/delete', 
-        [OrderController::class, 'delete'])
-        ->name('OrderDelelete');
-        
-    Route::post('/order/clear', 
-        [OrderController::class, 'clear'])
-        ->name('OrderClear');
-
-    Route::post('/order/auth/access', 
-        [OrderController::class, 'Access'])
-        ->name('OrderAccess');
-
-    Route::post('/order/auth/Logout', 
-    [OrderController::class, 'Logout'])
-    ->name('OrderLogout');
+    Route::post(
+        '/order/renew',
+        [OrderController::class, 'renewRequest']
+    )
+    ->name('OrderRenewRequest');
     
-    Route::get('/print', function () 
-    {
+    Route::post(
+        '/order/aprove',
+        [OrderController::class, 'aprove']
+    )
+    ->name('OrderAprove');
+
+    Route::post(
+        '/order/insert',
+        [OrderController::class, 'insert']
+    )
+    ->name('OrderInsert');
+
+    Route::post(
+        '/order/delete',
+        [OrderController::class, 'delete']
+    )
+    ->name('OrderDelelete');
+        
+    Route::post(
+        '/order/clear',
+        [OrderController::class, 'clear']
+    )
+    ->name('OrderClear');
+
+    Route::post(
+        '/order/auth/access',
+        [OrderController::class, 'Access']
+    )
+    ->name('OrderAccess');
+
+    Route::post(
+        '/order/auth/Logout',
+        [OrderController::class, 'Logout']
+    )
+    ->name('OrderLogout');
+
+    Route::get('/print', function () {
         return view('print')->with('title', 'um titulo');
     });
 
@@ -80,54 +105,84 @@ use App\Http\Controllers\Dashboard\NewOrderController;
     // ! Dashboard:: Routers Management                               #
     // ! ##############################################################
 
-    Route::get('dashboard/login', function () 
-    {
-        return view('login')->with('title', 'Login');
+    Route::get('dashboard/login', function () {
+        return
+        view('login')
+        ->with('title', 'Login');
     })
-    ->middleware('guest')->name('login');
+    ->middleware('guest')
+    ->name('login');
 
     // todo: Methods Post
-    Route::post('/dashboard/login',  
-        [AuthenticatedSessionController::class, 'store'])
-        ->middleware('guest');
+    Route::post(
+        '/dashboard/login',
+        [AuthenticatedSessionController::class, 'store']
+    )
+    ->middleware('guest');
 
-    Route::post('/dashboard/logout', 
-        [AuthenticatedSessionController::class, 'destroy'])
-        ->middleware('auth')->name('logout');
+    Route::post(
+        '/dashboard/logout',
+        [AuthenticatedSessionController::class, 'destroy']
+    )
+    ->middleware('auth')
+    ->name('logout');
     
     // todo: Methods Get
-    Route::get('/dashboard',                      
-        [DashboardController::class,'index'])
-        ->middleware('auth')->name('dash:index');
+    Route::get(
+        '/dashboard',
+        [DashboardController::class,'index']
+    )
+    ->middleware('auth')
+    ->name('dash:index');
 
-    Route::get('/dashboard/cards',                
-        [NewOrderController::class, 'cardFront'])
+    Route::get(
+        '/dashboard/cards',
+        [NewOrderController::class, 'cardFront']
+    )
         ->middleware('auth')->name('dash:card_front');
 
-    Route::get('/dashboard/cards/{frontid}',      
-        [NewOrderController::class, 'cardBack'])
+    Route::get(
+        '/dashboard/cards/{frontid}',
+        [NewOrderController::class, 'cardBack']
+    )
         ->middleware('auth')->name('dash:card_back');
 
-    Route::get('/dashboard/order/{front}/{back}', 
-        [NewOrderController::class, 'index'])
+    Route::get(
+        '/dashboard/order/{front}/{back}',
+        [NewOrderController::class, 'index']
+    )
         ->middleware('auth')->name('dash:orders');
 
-    Route::post('/dashboard/order/add',           
-        [NewOrderController::class, 'AddOrder'])
+    Route::post(
+        '/dashboard/order/add',
+        [NewOrderController::class, 'AddOrder']
+    )
         ->middleware('auth')->name('dash:addorder');
 
-    Route::get('/dashboard/export/{id}', 
-        [NewOrderController::class, 'ExportOrders'])
+    Route::post(
+        '/dashboard/order/complete',
+        [NewOrderController::class, 'endOrder']
+    )
+    ->name('OrdersComplete');
+        
+    Route::get(
+        '/dashboard/export/{id}',
+        [NewOrderController::class, 'ExportOrders']
+    )
         ->middleware('auth')
         ->name('OrdersExport');
 
-    Route::get('/dashboard/download/{id}', 
-        [NewOrderController::class, 'DownloadOrders'])
+    Route::get(
+        '/dashboard/download/{id}',
+        [NewOrderController::class, 'DownloadOrders']
+    )
         ->middleware('auth')
         ->name('OrdersDownload');
     
-    Route::post('/dashboard/import', 
-        [NewOrderController::class, 'ImportOrders'])
+    Route::post(
+        '/dashboard/import',
+        [NewOrderController::class, 'ImportOrders']
+    )
         ->middleware('auth')
         ->name('ImportOrders');
 
@@ -161,15 +216,12 @@ use App\Http\Controllers\Dashboard\NewOrderController;
 
 
 
-    Route::get('/websocket', function () 
-    {
+    Route::get('/websocket', function () {
         return event(new App\Events\RealTimeMessage('Hello World'));
     });
 
     
-    Route::get('/websocket/private/{id}/{msg}', function ($id, $msg) 
-    {
-
+    Route::get('/websocket/private/{id}/{msg}', function ($id, $msg) {
         $user = User::where('id', $id)->first();
         $user->notify(new \App\Notifications\usersNotification($msg .' || ID: '. $user->name));
         
@@ -213,7 +265,6 @@ Route::get('/scout5', [RegisteredUserController::class, 'create' ])->name('admin
 Route::get('/scout6', [RegisteredUserController::class, 'create' ])->name('Super Administrador')->middleware('super');
  */
 Route::get('/clear-cache', function () {
-
     $configCache = Artisan::call('config:cache');
     $clearCache = Artisan::call('cache:clear');
     $clearCache = Artisan::call('config:clear');
