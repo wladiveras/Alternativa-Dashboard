@@ -4,10 +4,10 @@
             <th>ID</th>
             <th>Detalhe</th>
 
+            <th>Angariador/Preposto</th>
             <th>Corretora</th>
             <th>Susep</th>
-            <th>Angariador/Preposto</th>
-
+            
             <th>Ações</th>
         </tr>
     </thead>

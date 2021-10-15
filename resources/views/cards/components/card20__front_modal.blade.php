@@ -27,19 +27,19 @@
 <!-- end:: Photo -->
 
 <div class="form-group">
+    <label>Angariador/Preposto <span class="text-danger">*</span></label>
+    <input type="text" name="front-input-0" class="form-control" maxlength="21" required>
+    <div class="invalid-feedback">O campo <b>Angariador/Preposto</b> é necessário.</div>
+</div>
+
+<div class="form-group">
    <label>Corretora <span class="text-danger">*</span></label>
-   <input type="text" name="front-input-0" class="form-control" maxlength="21" required>
+   <input type="text" name="front-input-1" class="form-control" maxlength="21" required>
    <div class="invalid-feedback">O campo <b>Corretora</b> é necessário.</div>
 </div>
 
 <div class="form-group">
    <label>Susep <span class="text-danger">*</span></label>
-   <input type="text" name="front-input-1" class="form-control" maxlength="21" required>
+   <input type="text" name="front-input-2" class="form-control" maxlength="21" required>
    <div class="invalid-feedback">O campo <b>Susep</b> é necessário.</div>
-</div>
-
-<div class="form-group">
-    <label>Angariador/Preposto <span class="text-danger">*</span></label>
-    <input type="text" name="front-input-2" class="form-control" maxlength="21" required>
-    <div class="invalid-feedback">O campo <b>Angariador/Preposto</b> é necessário.</div>
 </div>
