@@ -2,14 +2,14 @@
     position: absolute;
     color: #000;
     z-index: 2;
-    top: 173px;
-    left: 96px;
-    width: 100px;
+    top: 224px;
+    left: -20px;
+    width: 200px;
     text-align: left;
     font-size: 15px;
     font-family: arial;
     transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     /*
     white-space: pre;
     */
@@ -19,34 +19,28 @@
     position: absolute;
     color: #000;
     z-index: 2;
-    top: 173px;
-    left: 64px;
-    width: 100px;
+    top: 224px;
+    left: 46px;
+    width: 200px;
     text-align: left;
     font-size: 15px;
     font-family: arial;
     transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-    /*
-    white-space: pre;
-    */
+    -ms-transform: rotate(90deg);
 }
 
 .element__tag3 {
     position: absolute;
     color: #000;
     z-index: 2;
-    top: 173px;
-    left: 30px;
-    width: 100px;
+    top: 224px;
+    left: 14px;
+    width: 200px;
     text-align: left;
     font-size: 15px;
     font-family: arial;
     transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-    /*
-    white-space: pre;
-    */
+    -ms-transform: rotate(90deg);
 }
 
 .element-avatar {
@@ -58,7 +52,4 @@
     height: 130px;
     transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
-    /*
-    white-space: pre;
-    */
 }
