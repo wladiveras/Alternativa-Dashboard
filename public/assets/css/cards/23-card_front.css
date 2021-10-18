@@ -1,0 +1,44 @@
+@font-face {
+    font-family: FutuBD;
+    src: url('../../fonts/FutuBd.ttf');
+  }
+
+@font-face {
+  font-family: Futu;
+  src: url('../../fonts/FutuMd.ttf');
+}
+
+.element__tag1 {
+    position: absolute;
+    color: #ee6110;
+    z-index: 2;
+    top: 183px;
+    width: 210px;
+    text-align: center;
+    font-size: 18px;
+    font-family: FutuBD;
+}
+
+.element__tag2 {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    top: 210px;
+    left: 6px;
+    width: 200px;
+    text-align: center;
+    font-size: 15px;
+    font-family: FutuBD;
+}
+
+
+.element-avatar {
+    position: absolute;
+    z-index: 2;
+    top: 45px;
+    left: 61px;
+    width: 92px;
+    height: 134px;
+}
+
+

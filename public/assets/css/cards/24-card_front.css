@@ -1,0 +1,68 @@
+@font-face {
+    font-family: LemonB;
+    src: url('../../fonts/LEMONMILK-Bold.otf');
+  }
+
+@font-face {
+  font-family: Lemon;
+  src: url('../../fonts/LEMONMILK-Regular.otf');
+}
+
+.element__tag1 {
+  position: absolute;
+  color: #0b4b7f;
+  z-index: 2;
+  top: 91px;
+  width: 210px;
+  text-align: center;
+  font-size: 10px;
+  font-family: LemonB;
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  top: 115px;
+  left: 6px;
+  width: 200px;
+  text-align: center;
+  font-size: 8px;
+  font-family: Lemon;
+}
+.element__tag3 {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  top: 255px;
+  left: 6px;
+  width: 200px;
+  text-align: left;
+  font-size: 12px;
+  font-family: Lemon;
+  padding-left: 66px;
+}
+.element__tag4 {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  top: 287px;
+  left: 6px;
+  width: 200px;
+  text-align: left;
+  font-size: 12px;
+  font-family: Lemon;
+  padding-left: 97px;
+}
+
+.element-avatar {
+  position: absolute;
+  z-index: 2;
+  top: 140px;
+  left: 61px;
+  width: 85px;
+  height: 105px;
+  border-radius: 5px;
+}
+
+

@@ -1,0 +1,35 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    left: 30px;
+    width: 200px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: 'Lemon';
+    /*
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    white-space: pre;
+    */
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 78px;
+    left: 90px;
+    width: 200px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Lemon;
+    /*
+    transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+    white-space: pre;
+    */
+}
