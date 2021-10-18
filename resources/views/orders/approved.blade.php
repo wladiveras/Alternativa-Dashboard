@@ -12,30 +12,30 @@
 <!--begin::Content-->
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
     <!--begin::Subheader-->
-    <div class="subheader py-2 py-lg-12 subheader-transparent" id="kt_subheader">
-        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+    <div class="py-2 subheader py-lg-12 subheader-transparent" id="kt_subheader">
+        <div class="container flex-wrap d-flex align-items-center justify-content-between flex-sm-nowrap">
             <!--begin::Info-->
-            <div class="d-flex align-items-center flex-wrap mr-1">
+            <div class="flex-wrap mr-1 d-flex align-items-center">
                 <!--begin::Heading-->
                 <div class="d-flex flex-column">
                     <!--begin::Title-->
-                    <h2 class="text-white font-weight-bold my-2 mr-5">{{ $order->limit_count }} de {{ $order->limit }} cartões gerados</h2>
+                    <h2 class="my-2 mr-5 text-white font-weight-bold">{{ $order->limit_count }} de {{ $order->limit }} cartões gerados</h2>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
-                    <div class="d-flex align-items-center font-weight-bold my-2">
+                    <div class="my-2 d-flex align-items-center font-weight-bold">
                         <!--begin::Item-->
                         <a href="#" class="opacity-75 hover-opacity-100">
-                            <i class="flaticon2-shelter text-white icon-1x"></i>
+                            <i class="text-white flaticon2-shelter icon-1x"></i>
                         </a>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <span class="label label-dot label-sm bg-white opacity-75 mx-3"></span>
+                        <span class="mx-3 bg-white opacity-75 label label-dot label-sm"></span>
                         <a href=""
-                            class="text-white text-hover-white opacity-75 hover-opacity-100">{{ env('APP_NAME') }}</a>
+                            class="text-white opacity-75 text-hover-white hover-opacity-100">{{ env('APP_NAME') }}</a>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <span class="label label-dot label-sm bg-white opacity-75 mx-3"></span>
-                        <a href="" class="text-white text-hover-white opacity-75 hover-opacity-100">Aprovação</a>
+                        <span class="mx-3 bg-white opacity-75 label label-dot label-sm"></span>
+                        <a href="" class="text-white opacity-75 text-hover-white hover-opacity-100">Aprovação</a>
                         <!--end::Item-->
                     </div>
                     <!--end::Breadcrumb-->
@@ -44,13 +44,13 @@
             </div>
             <!--end::Info-->
             <div class="d-flex align-items-center">
-                <a href="{{ $order->order_link }}" target="_blank" class="btn btn-transparent-white font-weight-bold py-3 px-6 mr-2">Proposta Comercial</a>
+                <a href="{{ $order->order_link }}" target="_blank" class="px-6 py-3 mr-2 btn btn-transparent-white font-weight-bold">Proposta Comercial</a>
                 <!--begin::Desconnect-->
                 <form method="POST" action="{{ route('OrderLogout') }}">
                     @csrf
-                    <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="" data-placement="top" data-original-title="Desconectar">
+                    <div class="ml-2 dropdown dropdown-inline" data-toggle="tooltip" title="" data-placement="top" data-original-title="Desconectar">
                     
-                        <button type="submit" class="btn btn-white font-weight-bold py-3 px-6" >Sair</button>
+                        <button type="submit" class="px-6 py-3 btn btn-white font-weight-bold" >Sair</button>
                     </div>
                 </form>
                 <!--end::Desconnect-->
@@ -63,13 +63,13 @@
         <!--begin::Container-->
         <div class="container">
             <div class="card card-custom">
-                <div class="card-body p-0">
+                <div class="p-0 card-body">
                     <!--begin::Wizard-->
                     <div class="wizard wizard-1" id="kt_wizard" data-wizard-state="step-first"
                         data-wizard-clickable="false">
                         <!--begin::Wizard Nav-->
                         <div class="wizard-nav border-bottom">
-                            <div class="wizard-steps p-8 p-lg-10">
+                            <div class="p-8 wizard-steps p-lg-10">
                                 <!--begin::Wizard Step 1 Nav-->
                                 <div class="wizard-step" data-wizard-type="step">
                                     <div class="wizard-label">
@@ -89,7 +89,7 @@
                         </div>
                         <!--end::Wizard Nav-->
                         <!--begin::Wizard Body-->
-                        <div class="row justify-content-center my-10 px-8 my-lg-15 px-lg-10">
+                        <div class="px-8 my-10 row justify-content-center my-lg-15 px-lg-10">
                             <div class="col-xl-12 col-xxl-10">
                                 <!--begin::Wizard Form-->
                                 <div class="form">
@@ -98,10 +98,10 @@
                                     <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
 
                                         <div class="card card-custom gutter-b">
-                                            <div class="card-header flex-wrap py-3">
+                                            <div class="flex-wrap py-3 card-header">
                                                 <div class="card-title">
                                                     <h2 class="card-label"><br>#{{ $order->order_id }}: Aprovado
-                                                        <span class="d-block text-muted pt-2 font-size-sm">
+                                                        <span class="pt-2 d-block text-muted font-size-sm">
                                                             Aprovado em {{ Carbon::createFromFormat('Y-m-d H:i:s', $order->approved_at)->format('d/m/Y - H:i:s') }}<br>
                                                             Previsto para ser entregue em {{ Carbon::createFromFormat('Y-m-d H:i:s', $order->approved_at)->addDays($order->prompt)->format('d/m/Y') }}
                                                         </span>
@@ -111,7 +111,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <!--begin: Datatable-->
-                                                <h4 class="card-label text-center"><br>
+                                                <h4 class="text-center card-label"><br>
                                                     <p>
                                                         Olá <b>{{ $order->username }}<b>, seu pedido foi aprovado e enviado para a produção.<br>
                                                         O seu produto está previsto para ser entregue aproximadamente no dia 
@@ -155,25 +155,28 @@
                                     <!--begin::Wizard Actions-->
                                     <form id="kt_form">
                                         
-                                        <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                                        <div class="pt-10 mt-5 d-flex justify-content-between border-top">
                                             <div class="mr-2">
                                                 <button type="button"
-                                                    class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4"
+                                                    class="py-4 btn btn-light-primary font-weight-bolder text-uppercase px-9"
                                                     data-wizard-type="action-prev">Voltar</button>
                                             </div>
                                             <div>
+                                                @if($order->ready_at)
                                                 <a 
                                                 href="{{ route('OrderRenew') }}"
                                                 type="button"
                                                 data-toggle="tooltip" 
                                                 data-theme="dark" 
                                                 title="Ao fazer um novo pedido, todos os antigos dados serão apagados"
-                                                class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">
+                                                class="py-4 btn btn-primary font-weight-bolder text-uppercase px-9"
+                                                disabled>
                                                     Novo Pedido
                                                 </a>
+                                                @endif
                                                 <button 
                                                 type="button"
-                                                class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4"
+                                                class="py-4 btn btn-primary font-weight-bolder text-uppercase px-9"
                                                 data-wizard-type="action-next">
                                                     Visualizar Cartões
                                                 </button>
