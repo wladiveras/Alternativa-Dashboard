@@ -97,7 +97,9 @@ class NewOrderController extends Controller
         
         $zipper = new \Madnest\Madzipper\Madzipper;
         $zipper->make($path.$zip_name)->folder('assets_'.$orderid)->add($files);
+        $zipper->close();
 
+        
         return response()->download($path.$zip_name);
     }
 
