@@ -6,7 +6,7 @@
     
 		<h4 class="secondary"><strong>{{$order->username }}:: Pedido aprovado</strong></h4>
 		<p>
-			<b>{{$order->limit_count }}</b> de <b>{{ $order->limit }}</b> cartões aprovados para produção as <b>{{$order->approved_at }}</b>.
+			<b>{{$order->limit_count }}</b> de <b>{{ $order->limit_count }}</b> cartões aprovados para produção as <b>{{$order->approved_at }}</b>.
 		</p>
 		<p>
 			Previsão para entrega :: 

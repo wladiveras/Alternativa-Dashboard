@@ -139,55 +139,59 @@ use App\Http\Controllers\Dashboard\NewOrderController;
         '/dashboard/cards',
         [NewOrderController::class, 'cardFront']
     )
-        ->middleware('auth')->name('dash:card_front');
+    ->middleware('auth')->name('dash:card_front');
 
     Route::get(
         '/dashboard/cards/{frontid}',
         [NewOrderController::class, 'cardBack']
     )
-        ->middleware('auth')->name('dash:card_back');
+    ->middleware('auth')->name('dash:card_back');
 
     Route::get(
         '/dashboard/order/{front}/{back}',
         [NewOrderController::class, 'index']
     )
-        ->middleware('auth')->name('dash:orders');
+    ->middleware('auth')->name('dash:orders');
 
     Route::post(
         '/dashboard/order/add',
         [NewOrderController::class, 'AddOrder']
     )
-        ->middleware('auth')->name('dash:addorder');
+    ->middleware('auth')->name('dash:addorder');
 
     Route::post(
         '/dashboard/order/complete',
         [NewOrderController::class, 'endOrder']
     )
     ->name('OrdersComplete');
-        
+    
+    Route::post(
+        '/dashboard/order/delete',
+        [NewOrderController::class, 'delOrder']
+    )
+    ->middleware('auth')
+    ->name('OrdersDelete');
+    
     Route::get(
         '/dashboard/export/{id}',
         [NewOrderController::class, 'ExportOrders']
     )
-        ->middleware('auth')
-        ->name('OrdersExport');
+    ->middleware('auth')
+    ->name('OrdersExport');
 
     Route::get(
         '/dashboard/download/{id}',
         [NewOrderController::class, 'DownloadOrders']
     )
-        ->middleware('auth')
-        ->name('OrdersDownload');
+    ->middleware('auth')
+    ->name('OrdersDownload');
     
     Route::post(
         '/dashboard/import',
         [NewOrderController::class, 'ImportOrders']
     )
-        ->middleware('auth')
-        ->name('ImportOrders');
-
-  
-
+    ->middleware('auth')
+    ->name('ImportOrders');
 
 
 

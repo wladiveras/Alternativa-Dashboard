@@ -11,25 +11,25 @@
 @section("wrapper")
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
     <!--begin::Subheader-->
-    <div class="subheader py-2 py-lg-12 subheader-transparent" id="kt_subheader">
-        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+    <div class="py-2 subheader py-lg-12 subheader-transparent" id="kt_subheader">
+        <div class="container flex-wrap d-flex align-items-center justify-content-between flex-sm-nowrap">
             <!--begin::Info-->
-            <div class="d-flex align-items-center flex-wrap mr-1">
+            <div class="flex-wrap mr-1 d-flex align-items-center">
                 <!--begin::Heading-->
                 <div class="d-flex flex-column">
                     <!--begin::Title-->
-                    <h2 class="text-white font-weight-bold my-2 mr-5">Dashboard</h2>
+                    <h2 class="my-2 mr-5 text-white font-weight-bold">Dashboard</h2>
                     <!--end::Title-->
                     <!--begin::Breadcrumb-->
-                    <div class="d-flex align-items-center font-weight-bold my-2">
+                    <div class="my-2 d-flex align-items-center font-weight-bold">
                         <!--begin::Item-->
                         <a href="#" class="opacity-75 hover-opacity-100">
-                            <i class="flaticon2-shelter text-white icon-1x"></i>
+                            <i class="text-white flaticon2-shelter icon-1x"></i>
                         </a>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <span class="label label-dot label-sm bg-white opacity-75 mx-3"></span>
-                        <a href="" class="text-white text-hover-white opacity-75 hover-opacity-100">Dashboard</a>
+                        <span class="mx-3 bg-white opacity-75 label label-dot label-sm"></span>
+                        <a href="" class="text-white opacity-75 text-hover-white hover-opacity-100">Dashboard</a>
                         <!--end::Item-->
                     
                     </div>
@@ -81,10 +81,10 @@
                                                 </svg>
                                                 <!--end::Svg Icon-->
                                             </span>
-                                            <div class="text-inverse-primary font-weight-bolder font-size-h2 mt-3">{{ $orders_count }}
+                                            <div class="mt-3 text-inverse-primary font-weight-bolder font-size-h2">{{ $orders_count }}
                                             </div>
                                             <a href="#"
-                                                class="text-inverse-primary font-weight-bold font-size-lg mt-1">Pedidos</a>
+                                                class="mt-1 text-inverse-primary font-weight-bold font-size-lg">Pedidos</a>
                                         </div>
                                     </div>
                                     <!--end::Tiles Widget 11-->
@@ -110,9 +110,9 @@
                                                 </svg>
                                                 <!--end::Svg Icon-->
                                             </span>
-                                            <div class="text-dark font-weight-bolder font-size-h2 mt-3">{{ $cards_count }}</div>
+                                            <div class="mt-3 text-dark font-weight-bolder font-size-h2">{{ $cards_count }}</div>
                                             <a href="#"
-                                                class="text-muted text-hover-primary font-weight-bold font-size-lg mt-1">Cartões
+                                                class="mt-1 text-muted text-hover-primary font-weight-bold font-size-lg">Cartões
                                                 Gerados</a>
                                         </div>
                                     </div>
@@ -124,13 +124,13 @@
                             <!--begin::Mixed Widget 10-->
                             <div class="card card-custom gutter-b" style="height: 150px">
                                 <!--begin::Body-->
-                                <div class="card-body d-flex align-items-center justify-content-between flex-wrap">
+                                <div class="flex-wrap card-body d-flex align-items-center justify-content-between">
                                     <div class="mr-2">
                                         <h3 class="font-weight-bolder">Novo Pedido</h3>
-                                        <div class="text-dark-50 font-size-lg mt-2">Criar um novo pedido de Cartões
+                                        <div class="mt-2 text-dark-50 font-size-lg">Criar um novo pedido de Cartões
                                         </div>
                                     </div>
-                                    <a href="{{ route('dash:card_front') }}" class="btn btn-primary font-weight-bold py-3 px-6">Começar</a>
+                                    <a href="{{ route('dash:card_front') }}" class="px-6 py-3 btn btn-primary font-weight-bold">Começar</a>
                                 </div>
                                 <!--end::Body-->
                             </div>
@@ -141,10 +141,10 @@
                             <!--begin::Advance Table Widget 1-->
                             <div class="card card-custom card-stretch gutter-b">
                                 <!--begin::Header-->
-                                <div class="card-header border-0 py-5">
+                                <div class="py-5 border-0 card-header">
                                     <h3 class="card-title align-items-start flex-column">
                                         <span class="card-label font-weight-bolder text-dark">Prontos para Produção</span>
-                                        <span class="text-muted mt-3 font-weight-bold font-size-sm">
+                                        <span class="mt-3 text-muted font-weight-bold font-size-sm">
                                             Pedidos prontos para impressão
                                         </span>
                                     </h3>
@@ -171,7 +171,7 @@
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Body-->
-                                <div class="card-body py-0">
+                                <div class="py-0 card-body">
                                     <!--begin::Table-->
                                     <div class="table-responsive">
                                         <table class="table table-head-custom table-vertical-center"
@@ -189,7 +189,7 @@
                                             @foreach ( $order_ready as $O)
                                                 <tr>
                                                     <td class="pr-0">
-                                                        <div class="symbol symbol-50 symbol-light mt-1">
+                                                        <div class="mt-1 symbol symbol-50 symbol-light">
                                                             <span class="symbol-label">
                                                                 <img src="assets/media/svg/avatars/001-boy.svg"
                                                                     class="h-75 align-self-end" alt="" />
@@ -198,9 +198,9 @@
                                                     </td>
                                                     <td class="pl-0">
                                                         <a href="#"
-                                                            class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{ $O->username }}</a>
+                                                            class="mb-1 text-dark-75 font-weight-bolder text-hover-primary font-size-lg">{{ $O->username }}</a>
                                                         <span
-                                                            class="text-muted font-weight-bold text-muted d-block">{{ $O->token }}</span>
+                                                            class="text-muted font-weight-bold d-block">{{ $O->token }}</span>
                                                     </td>
                                                     <td>
                                                         <span
@@ -209,11 +209,11 @@
                                                         <span class="text-muted font-weight-bold">{{ $O->limit }} Cartões</span>
                                                     </td>
                                                     <td>
-                                                        <div class="d-flex flex-column w-100 mr-2">
+                                                        <div class="mr-2 d-flex flex-column w-100">
                                                             <div
-                                                                class="d-flex align-items-center justify-content-between mb-2">
+                                                                class="mb-2 d-flex align-items-center justify-content-between">
                                                                 <span
-                                                                    class="text-muted mr-2 font-size-sm font-weight-bold">{{ Wladi::Percent($O->limit_count, $O->limit) }}%</span>
+                                                                    class="mr-2 text-muted font-size-sm font-weight-bold">{{ Wladi::Percent($O->limit_count, $O->limit) }}%</span>
                                                                 <span
                                                                     class="text-muted font-size-sm font-weight-bold">finalizado</span>
                                                             </div>
@@ -250,7 +250,7 @@
                                                             data-toggle="tooltip"
                                                             title="Baixar imagens"
                                                             href="{{ route('OrdersDownload', ['id' => $O->order_id]) }}"
-                                                            class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
+                                                            class="mx-3 btn btn-icon btn-light btn-hover-primary btn-sm"
                                                         >
                                                             <span class="svg-icon svg-icon-md svg-icon-primary">
                                                                 <i class="fas fa-image"></i>
@@ -318,16 +318,16 @@
                             <!--begin::Advance Table Widget 1-->
                             <div class="card card-custom card-stretch gutter-b">
                                 <!--begin::Header-->
-                                <div class="card-header border-0 py-5">
+                                <div class="py-5 border-0 card-header">
                                     <h3 class="card-title align-items-start flex-column">
                                         <span class="card-label font-weight-bolder text-dark">Aguardando aprovação </span>
-                                        <span class="text-muted mt-3 font-weight-bold font-size-sm">Pedidos aguardando aprovação</span>
+                                        <span class="mt-3 text-muted font-weight-bold font-size-sm">Pedidos aguardando aprovação</span>
                                     </h3>
                         
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Body-->
-                                <div class="card-body py-0">
+                                <div class="py-0 card-body">
                                     <!--begin::Table-->
                                     <div class="table-responsive">
                                         <table class="table table-head-custom table-vertical-center"
@@ -345,7 +345,7 @@
                                                 @foreach ( $order_doing as $O)
                                                 <tr>
                                                     <td class="pr-0">
-                                                        <div class="symbol symbol-50 symbol-light mt-1">
+                                                        <div class="mt-1 symbol symbol-50 symbol-light">
                                                             <span class="symbol-label">
                                                                 <img src="assets/media/svg/avatars/001-boy.svg"
                                                                     class="h-75 align-self-end" alt="" />
@@ -354,9 +354,9 @@
                                                     </td>
                                                     <td class="pl-0">
                                                         <a href="#"
-                                                            class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{ $O->username }}</a>
+                                                            class="mb-1 text-dark-75 font-weight-bolder text-hover-primary font-size-lg">{{ $O->username }}</a>
                                                         <span
-                                                            class="text-muted font-weight-bold text-muted d-block">{{ $O->token }}</span>
+                                                            class="text-muted font-weight-bold d-block">{{ $O->token }}</span>
                                                     </td>
                                                     <td>
                                                         <span
@@ -365,11 +365,11 @@
                                                         <span class="text-muted font-weight-bold">{{ $O->limit }} Cartões</span>
                                                     </td>
                                                     <td>
-                                                        <div class="d-flex flex-column w-100 mr-2">
+                                                        <div class="mr-2 d-flex flex-column w-100">
                                                             <div
-                                                                class="d-flex align-items-center justify-content-between mb-2">
+                                                                class="mb-2 d-flex align-items-center justify-content-between">
                                                                 <span
-                                                                    class="text-muted mr-2 font-size-sm font-weight-bold">{{ Wladi::Percent($O->limit_count, $O->limit) }}%</span>
+                                                                    class="mr-2 text-muted font-size-sm font-weight-bold">{{ Wladi::Percent($O->limit_count, $O->limit) }}%</span>
                                                                 <span
                                                                     class="text-muted font-size-sm font-weight-bold">finalizado</span>
                                                             </div>
@@ -402,18 +402,22 @@
                                                                 <i class="fas fa-edit"></i>
                                                             </span>
                                                         </a>
-                                                        <a 
-                                                            href="#"
+                                            
+                                                        <form method="POST" action="{{ route('OrdersDelete') }}">
+                                                            @csrf
+                                                            <input type="hidden" name="orderid" value="{{ $O->order_id }}" />
+                                                            <button 
+                                                            type="submit" 
                                                             data-theme="dark"
                                                             data-toggle="tooltip"
                                                             title="Excluir pedido"
                                                             class="btn btn-icon btn-light btn-hover-primary btn-sm"
-                                                        >
-                                                            <span class="svg-icon svg-icon-md svg-icon-primary">
-                                                                <i class="fas fa-trash"></i>
-                                                            </span>
-                                                        </a>
-                                                    
+                                                            >
+                                                                <span class="svg-icon svg-icon-md svg-icon-primary">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </span>
+                                                            </button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -442,29 +446,29 @@
                     <!--begin::List Widget 10-->
                     <div class="card card-custom card-stretch gutter-b">
                         <!--begin::Header-->
-                        <div class="card-header border-0">
+                        <div class="border-0 card-header">
                             <h3 class="card-title font-weight-bolder text-dark">Em produção</h3>
                         </div>
                         <!--end::Header-->
                         <!--begin::Body-->
-                        <div class="card-body pt-0">
+                        <div class="pt-0 card-body">
                             <!--begin::Item-->
                             <div class="mb-6">
                                 <!--begin::Content-->
                                 <div class="d-flex align-items-center flex-grow-1">
                                     <!--begin::Checkbox-->
-                                    <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
+                                    <label class="flex-shrink-0 mr-4 checkbox checkbox-lg">
                                         <input type="checkbox" value="1" />
                                         <span></span>
                                     </label>
                                     <!--end::Checkbox-->
                                     <!--begin::Section-->
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+                                    <div class="flex-wrap d-flex align-items-center justify-content-between w-100">
                                         <!--begin::Info-->
-                                        <div class="d-flex flex-column align-items-cente py-2 w-75">
+                                        <div class="py-2 d-flex flex-column align-items-cente w-75">
                                             <!--begin::Title-->
                                             <a href="#"
-                                                class="text-dark-75 font-weight-bold text-hover-primary font-size-lg mb-1">#495
+                                                class="mb-1 text-dark-75 font-weight-bold text-hover-primary font-size-lg">#495
                                                 - 90 cartões</a>
                                             <!--end::Title-->
                                             <!--begin::Data-->
@@ -474,7 +478,7 @@
                                         <!--end::Info-->
                                         <!--begin::Label-->
                                         <span
-                                            class="label label-lg label-light-primary label-inline font-weight-bold py-4">Approved</span>
+                                            class="py-4 label label-lg label-light-primary label-inline font-weight-bold">Approved</span>
                                         <!--end::Label-->
                                     </div>
                                     <!--end::Section-->
@@ -487,18 +491,18 @@
                                 <!--begin::Content-->
                                 <div class="d-flex align-items-center flex-grow-1">
                                     <!--begin::Checkbox-->
-                                    <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
+                                    <label class="flex-shrink-0 mr-4 checkbox checkbox-lg">
                                         <input type="checkbox" value="1" />
                                         <span></span>
                                     </label>
                                     <!--end::Checkbox-->
                                     <!--begin::Section-->
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+                                    <div class="flex-wrap d-flex align-items-center justify-content-between w-100">
                                         <!--begin::Info-->
-                                        <div class="d-flex flex-column align-items-cente py-2 w-75">
+                                        <div class="py-2 d-flex flex-column align-items-cente w-75">
                                             <!--begin::Title-->
                                             <a href="#"
-                                                class="text-dark-75 font-weight-bold text-hover-primary font-size-lg mb-1">#4948
+                                                class="mb-1 text-dark-75 font-weight-bold text-hover-primary font-size-lg">#4948
                                                 - 6000 cartões</a>
                                             <!--end::Title-->
                                             <!--begin::Data-->
@@ -508,7 +512,7 @@
                                         <!--end::Info-->
                                         <!--begin::Label-->
                                         <span
-                                            class="label label-lg label-light-warning label-inline font-weight-bold py-4">Em
+                                            class="py-4 label label-lg label-light-warning label-inline font-weight-bold">Em
                                             produção</span>
                                         <!--end::Label-->
                                     </div>
@@ -522,18 +526,18 @@
                                 <!--begin::Content-->
                                 <div class="d-flex align-items-center flex-grow-1">
                                     <!--begin::Checkbox-->
-                                    <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
+                                    <label class="flex-shrink-0 mr-4 checkbox checkbox-lg">
                                         <input type="checkbox" value="1" />
                                         <span></span>
                                     </label>
                                     <!--end::Checkbox-->
                                     <!--begin::Section-->
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+                                    <div class="flex-wrap d-flex align-items-center justify-content-between w-100">
                                         <!--begin::Info-->
-                                        <div class="d-flex flex-column align-items-cente py-2 w-75">
+                                        <div class="py-2 d-flex flex-column align-items-cente w-75">
                                             <!--begin::Title-->
                                             <a href="#"
-                                                class="text-dark-75 font-weight-bold text-hover-primary font-size-lg mb-1">Next
+                                                class="mb-1 text-dark-75 font-weight-bold text-hover-primary font-size-lg">Next
                                                 sprint planning and estimations</a>
                                             <!--end::Title-->
                                             <!--begin::Data-->
@@ -543,7 +547,7 @@
                                         <!--end::Info-->
                                         <!--begin::Label-->
                                         <span
-                                            class="label label-lg label-light-success label-inline font-weight-bold py-4">Success</span>
+                                            class="py-4 label label-lg label-light-success label-inline font-weight-bold">Success</span>
                                         <!--end::Label-->
                                     </div>
                                     <!--end::Section-->
@@ -556,18 +560,18 @@
                                 <!--begin::Content-->
                                 <div class="d-flex align-items-center flex-grow-1">
                                     <!--begin::Checkbox-->
-                                    <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
+                                    <label class="flex-shrink-0 mr-4 checkbox checkbox-lg">
                                         <input type="checkbox" value="1" />
                                         <span></span>
                                     </label>
                                     <!--end::Checkbox-->
                                     <!--begin::Section-->
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+                                    <div class="flex-wrap d-flex align-items-center justify-content-between w-100">
                                         <!--begin::Info-->
-                                        <div class="d-flex flex-column align-items-cente py-2 w-75">
+                                        <div class="py-2 d-flex flex-column align-items-cente w-75">
                                             <!--begin::Title-->
                                             <a href="#"
-                                                class="text-dark-75 font-weight-bold text-hover-primary font-size-lg mb-1">Sprint
+                                                class="mb-1 text-dark-75 font-weight-bold text-hover-primary font-size-lg">Sprint
                                                 delivery and project deployment</a>
                                             <!--end::Title-->
                                             <!--begin::Data-->
@@ -577,7 +581,7 @@
                                         <!--end::Info-->
                                         <!--begin::Label-->
                                         <span
-                                            class="label label-lg label-light-danger label-inline font-weight-bold py-4">Rejected</span>
+                                            class="py-4 label label-lg label-light-danger label-inline font-weight-bold">Rejected</span>
                                         <!--end::Label-->
                                     </div>
                                     <!--end::Section-->
@@ -590,18 +594,18 @@
                                 <!--begin::Content-->
                                 <div class="d-flex align-items-center flex-grow-1">
                                     <!--begin::Checkbox-->
-                                    <label class="checkbox checkbox-lg checkbox-lg flex-shrink-0 mr-4">
+                                    <label class="flex-shrink-0 mr-4 checkbox checkbox-lg">
                                         <input type="checkbox" value="1" />
                                         <span></span>
                                     </label>
                                     <!--end::Checkbox-->
                                     <!--begin::Section-->
-                                    <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+                                    <div class="flex-wrap d-flex align-items-center justify-content-between w-100">
                                         <!--begin::Info-->
-                                        <div class="d-flex flex-column align-items-cente py-2 w-75">
+                                        <div class="py-2 d-flex flex-column align-items-cente w-75">
                                             <!--begin::Title-->
                                             <a href="#"
-                                                class="text-dark-75 font-weight-bold text-hover-primary font-size-lg mb-1">Data
+                                                class="mb-1 text-dark-75 font-weight-bold text-hover-primary font-size-lg">Data
                                                 analytics research showcase</a>
                                             <!--end::Title-->
                                             <!--begin::Data-->
@@ -611,7 +615,7 @@
                                         <!--end::Info-->
                                         <!--begin::Label-->
                                         <span
-                                            class="label label-lg label-light-warning label-inline font-weight-bold py-4">In
+                                            class="py-4 label label-lg label-light-warning label-inline font-weight-bold">In
                                             Progress</span>
                                         <!--end::Label-->
                                     </div>
@@ -631,13 +635,13 @@
 					<!--begin::List Widget 11-->
 					<div class="card card-custom card-stretch gutter-b">
 						<!--begin::Header-->
-						<div class="card-header border-0">
+						<div class="border-0 card-header">
 							<h3 class="card-title font-weight-bolder text-dark">Atualizações</h3>
 							
 						</div>
 						<!--end::Header-->
 						<!--begin::Body-->
-						<div class="card-body pt-0">
+						<div class="pt-0 card-body">
 			
 							<!--begin::Item-->
 							<div class="app__notify"></div>

@@ -3,7 +3,7 @@
 <!-- 
 //#===========================================================#//
 //#                     Phoenix Dashboard                     #// 
-//#                         v1.0.0.31                         #//
+//#                         v1.0.2.53                         #//
 //#===========================================================#//
 //#===========================================================#//
 //#                                                           #//
@@ -75,7 +75,7 @@
    
     <div class="d-flex flex-column flex-root">
         <!--begin::Page-->
-        <div class="d-flex flex-row flex-column-fluid page">
+        <div class="flex-row d-flex flex-column-fluid page">
             <!--begin::Wrapper-->
             <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
 
@@ -86,19 +86,19 @@
                 @yield("wrapper")
                 <!--end::Content-->
                 <!--begin::Footer-->
-                <div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
+                <div class="py-4 bg-white footer d-flex flex-lg-column" id="kt_footer">
                     <!--begin::Container-->
                     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
                         <!--begin::Copyright-->
-                        <div class="text-dark order-2 order-md-1">
-                            <span class="text-muted font-weight-bold mr-2">2021 ©</span> Desenvolvido com <font color="red" size="4">♥</font> por 
+                        <div class="order-2 text-dark order-md-1">
+                            <span class="mr-2 text-muted font-weight-bold">2021 ©</span> Desenvolvido com <font color="red" size="4">♥</font> por 
                             <a href="https://wladiveras.com" target="_blank" class="text-dark-75 text-bold text-hover-primary">Wladi Veras</a>
                         </div>
                         <!--end::Copyright-->
                         <!--begin::Nav-->
-                        <div class="nav nav-dark order-1 order-md-2">
-                            <a href="https://alternativacard.com" target="_blank" class="nav-link pr-3 pl-0">Alternativa Card</a>
-                            <a href="mailto:operacional@alternativacard.com" class="nav-link pl-3 pr-0">Suporte</a>
+                        <div class="order-1 nav nav-dark order-md-2">
+                            <a href="https://alternativacard.com" target="_blank" class="pl-0 pr-3 nav-link">Alternativa Card</a>
+                            <a href="mailto:operacional@alternativacard.com" class="pl-3 pr-0 nav-link">Suporte</a>
                         </div>
                         <!--end::Nav-->
                     </div>
