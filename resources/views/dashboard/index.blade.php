@@ -256,7 +256,7 @@
                                                                 <i class="fas fa-image"></i>
                                                             </span>
                                                         </a>
-                                                        <a  
+                                                        {{-- <a  
                                                             href="#"
                                                             data-theme="dark"
                                                             data-toggle="tooltip"
@@ -266,7 +266,7 @@
                                                             <span class="svg-icon svg-icon-md svg-icon-primary">
                                                                 <i class="fas fa-edit"></i>
                                                             </span>
-                                                        </a>
+                                                        </a> --}}
                                                         <a 
                                                             href="#"
                                                             data-theme="dark"
@@ -389,7 +389,7 @@
                                                     </td>
                                                     <td class="pr-0 text-right">
                                                        
-                                                        <a  
+                                                        {{-- <a  
                                                             href="#"
                                                             data-theme="dark"
                                                             data-toggle="tooltip"
@@ -399,7 +399,7 @@
                                                             <span class="svg-icon svg-icon-md svg-icon-primary">
                                                                 <i class="fas fa-edit"></i>
                                                             </span>
-                                                        </a>
+                                                        </a> --}}
                                             
                                                         <a>
                                                         <form method="POST" style="display:inline-block" action="{{ route('OrdersDelete') }}">
