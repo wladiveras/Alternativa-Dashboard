@@ -1,0 +1,45 @@
+@font-face {
+    font-family: BigShoulders;
+    src: url('../../fonts/BigShouldersDisplay-Bold.ttf');
+  }
+
+@font-face {
+  font-family: Georama;
+  src: url('../../fonts/Georama-Regular.ttf');
+}
+
+.element__tag1 {
+  position: absolute;
+  color: #821f65;
+  z-index: 2;
+  top: 205px;
+  width: 210px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  font-family: BigShoulders;
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  top: 275px;
+  left: 6px;
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Georama;
+}
+
+.element-avatar {
+  position: absolute;
+  z-index: 2;
+  top: 92px;
+  left: 57px;
+  width: 100px;
+  height: 101px;
+  border-radius: 50%;
+}
+
+

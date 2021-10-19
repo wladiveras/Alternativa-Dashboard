@@ -1,0 +1,57 @@
+.element__tag1 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 255px;
+  width: 210px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial;
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 275px;
+  left: 6px;
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial;
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 275px;
+  left: 6px;
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial;
+}
+.element__tag3 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 295px;
+  left: 6px;
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial;
+}
+
+.element-avatar {
+  position: absolute;
+  z-index: 2;
+  top: 82px;
+  left: 46px;
+  width: 120px;
+  height: 150px;
+}
+
+
