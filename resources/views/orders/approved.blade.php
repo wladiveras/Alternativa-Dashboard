@@ -173,6 +173,16 @@
                                                 disabled>
                                                     Novo Pedido
                                                 </a>
+                                                @else
+                                                <button
+                                                type="button"
+                                                data-toggle="tooltip" 
+                                                data-theme="dark" 
+                                                title="Ao fazer um novo pedido, todos os antigos dados serão apagados"
+                                                class="py-4 btn btn-primary font-weight-bolder text-uppercase px-9"
+                                                disabled>
+                                                    Finalizando produção
+                                                </button>
                                                 @endif
                                                 <button 
                                                 type="button"
