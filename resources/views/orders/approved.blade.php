@@ -181,7 +181,7 @@
                                                 title="Ao fazer um novo pedido, todos os antigos dados serão apagados"
                                                 class="py-4 btn btn-primary font-weight-bolder text-uppercase px-9"
                                                 disabled>
-                                                    Finalizando produção
+                                                    Novo Pedido
                                                 </button>
                                                 @endif
                                                 <button 
