@@ -111,6 +111,23 @@ class NewOrderController extends Controller
             'ready_at' => Carbon::now(),
         ]);
 
+        $order =
+            DB::table('alt_orders')
+            ->where('order_id', '=', $request->orderid)
+            ->first();
+
+ 
+        // Send Email
+        $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
+
+        $beautymail->send('emails.finished', ['order' => $order], function ($message) use ($order) {
+            $message
+                ->from('hi@wladi.com.br')
+                ->to($order->token, 'Alternativa')
+                ->subject('Em Produção: seu pedido está sendo produzido');
+        });
+
+        //
         return redirect()->action([DashboardController::class, 'index'])
         ->with('alert-type', 'toaster')
         ->with('alert-title', 'Finalizado')
