@@ -278,9 +278,7 @@
                                                                 <i class="fas fa-trash"></i>
                                                             </span>
                                                         </a>
-                                                     
-                                                      
-                                                        </a>
+                                                    
                                                         <a>
                                                         <form style="display:inline" method="POST" action="{{ route('OrdersComplete') }}">
                                                             @csrf
@@ -403,7 +401,8 @@
                                                             </span>
                                                         </a>
                                             
-                                                        <form method="POST" action="{{ route('OrdersDelete') }}">
+                                                        <a>
+                                                        <form method="POST" style="display:inline-block" action="{{ route('OrdersDelete') }}">
                                                             @csrf
                                                             <input type="hidden" name="orderid" value="{{ $O->order_id }}" />
                                                             <button 
@@ -418,6 +417,7 @@
                                                                 </span>
                                                             </button>
                                                         </form>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
