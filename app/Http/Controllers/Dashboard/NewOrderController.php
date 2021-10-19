@@ -2,9 +2,9 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
 use Madnest\Madzipper\Facades\Madzipper;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\OrdersExport;
@@ -67,33 +67,38 @@ class NewOrderController extends Controller
         ->with('alert-response', 'Ordem de pedido criada com sucesso.<br>Email de acesso: <b>'.$request->input('order_email').'</b><br>Senha de Acesso: <b>'.$request->input('order_number').'</b>');
     }
 
+    public function delOrder(Request $request)
+    {
+        File::deleteDirectory(public_path('/assets/media/cards/uploads/'.$request->orderid));
+        File::deleteDirectory(public_path('/assets/media/users/'.$request->orderid));
+        
+        DB::table('alt_orders')
+        ->where('order_id', '=', $request->orderid)
+        ->delete();
+
+        DB::table('alt_orders_data')
+        ->where('order_id', '=', $request->orderid)
+        ->delete();
+
+        return redirect()->action([DashboardController::class, 'index'])
+        ->with([
+            'alert-type'     => 'toaster',
+            'alert-title'    => 'Pedido deletado',
+            'alert-response' => 'O pedido foi deletado com sucesso',
+        ]);
+    }
+
     // Download Orders Assets
     public function DownloadOrders($orderid)
     {
-        $files = glob('public/assets/media/users/'.$orderid.'/*');
-       
-        $zip_file = $orderid."_assets.zip";
-    
-        $zip = new \ZipArchive();
-        $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
-        $path = base_path('public/assets/media/users/'.$orderid);
-
-        $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
-
-        foreach ($files as $name => $file) {
-            if (!$file->isDir()) {
-                $filePath     = $file->getRealPath();
-            
-                // Extrai os arquivos
-                $relativePath = 'test/'.$orderid .'/' . substr($filePath, strlen($path) + 1);
-            
-                $zip->addFile($filePath, $relativePath);
-            }
-        }
-
-        $zip->close();
+        $path = public_path('/assets/media/users/'.$orderid);
+        $files = File::glob($path.'/*.{png,jpeg,jpg,gif}', GLOB_BRACE);
+        $zip_name = '/'.$orderid.'_assets.zip';
         
-        return response()->download($zip_file);
+        $zipper = new \Madnest\Madzipper\Madzipper;
+        $zipper->make($path.$zip_name)->folder('assets_'.$orderid)->add($files);
+
+        return response()->download($path.$zip_name);
     }
 
     //Import orders data
@@ -122,11 +127,11 @@ class NewOrderController extends Controller
 
         $beautymail->send('emails.finished', ['order' => $order], function ($message) use ($order) {
             $message
-                ->from('hi@wladi.com.br')
+                ->from(env('MAIL_SENDER'))
                 ->to($order->token, 'Alternativa')
                 ->subject('Em Produção: seu pedido está sendo produzido');
         });
-
+        
         //
         return redirect()->action([DashboardController::class, 'index'])
         ->with('alert-type', 'toaster')

@@ -113,6 +113,8 @@ class OrderController extends Controller
 
     public function renewRequest(Request $request)
     {
+        File::cleanDirectory(public_path('/assets/media/users/'.$request->orderid));
+
         DB::table('alt_orders')
         ->where('order_id', $request->order_id)
         ->update([
@@ -137,8 +139,8 @@ class OrderController extends Controller
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
         $beautymail->send('emails.renew', ['order' => $order], function ($message) {
             $message
-                     ->from('hi@wladi.com.br')
-                     ->to('contato@alternativacard.com', 'Alternativa')
+                     ->from(env('MAIL_SENDER'))
+                     ->to(env('MAIL_ALERT'), 'Alternativa')
                      ->subject('Recorrência: novo pedido');
         });
 
@@ -224,8 +226,8 @@ class OrderController extends Controller
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
         $beautymail->send('emails.approved', ['order' => $order], function ($message) use ($order) {
             $message
-                ->from('hi@wladi.com.br')
-                ->to('contato@alternativacard.com', 'Alternativa')
+                ->from(env('MAIL_SENDER'))
+                ->to(env('MAIL_ALERT'), 'Alternativa')
                 ->subject($order->username .': aprovou o pedido');
         });
       

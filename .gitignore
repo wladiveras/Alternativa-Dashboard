@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/public/assets/media/users/*
+/public/assets/media/cards/uploads/*
 /storage/*.key
 /storage
 /bootstrap/cache

@@ -16,7 +16,6 @@ class DashboardController extends Controller
      *
      *  @return view
      */
-
     public function index()
     {
         $orders_doing =
