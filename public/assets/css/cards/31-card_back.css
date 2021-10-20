@@ -1,0 +1,40 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 52px;
+    left: 20px;
+    width: 100px;
+    height: 20px;
+    font-size: 10px;
+    color: #025380;
+    font-family: Arial;
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 52px;
+    left: 114px;
+    width: 80px;
+    height: 20px;
+    font-size: 10px;
+    color: rgb(212, 16, 16);
+    font-family: Arial;
+    text-align: center;
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 86px;
+    left: 20px;
+    width: 170px;
+    height: 20px;
+    font-size: 11px;
+    color: #025380;
+    font-family: Arial;
+    text-align: center;
+}

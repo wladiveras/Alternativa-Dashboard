@@ -1,0 +1,46 @@
+.element__tag1 {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  top: 162px;
+  left: 2px;
+  width: 210px;
+  text-align: center;
+  font-size: 18px;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  top: 184px;
+  left: -15px;
+  width: 245px;
+  text-align: center;
+  font-size: 13px;
+  font-family: Arial;
+}
+
+.element__tag3 {
+  position: absolute;
+  color: #343075;
+  z-index: 2;
+  top: 295px;
+  left: -30px;
+  width: 265px;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times;
+}
+
+.element-avatar {
+  position: absolute;
+  z-index: 2;
+  top: -11px;
+  left: 45px;
+  width: 80px;
+  height: 110px;
+  border-radius: 10px;
+}

@@ -605,8 +605,7 @@
                                         <div class="py-2 d-flex flex-column align-items-cente w-75">
                                             <!--begin::Title-->
                                             <a href="#"
-                                                class="mb-1 text-dark-75 font-weight-bold text-hover-primary font-size-lg">Data
-                                                analytics research showcase</a>
+                                                class="mb-1 text-dark-75 font-weight-bold text-hover-primary font-size-lg">Data analytics research showcase</a>
                                             <!--end::Title-->
                                             <!--begin::Data-->
                                             <span class="text-muted font-weight-bold">Due in 2 Days</span>

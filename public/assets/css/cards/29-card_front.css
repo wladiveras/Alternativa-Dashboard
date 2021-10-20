@@ -1,0 +1,86 @@
+.element__tag1 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 192px;
+  left: 6px;
+  width: 210px;
+  text-align: left;
+  font-size: 13px;
+  font-family: Arial;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  white-space: pre;
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 192px;
+  left: -30px;
+  width: 210px;
+  text-align: left;
+  font-size: 13px;
+  font-family: Arial;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  white-space: pre;
+}
+
+.element__tag3 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 315px;
+  left: -30px;
+  width: 210px;
+  text-align: left;
+  font-size: 13px;
+  font-family: Arial;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  white-space: pre;
+}
+
+.element__tag4 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 192px;
+  left: -65px;
+  width: 210px;
+  text-align: left;
+  font-size: 13px;
+  font-family: Arial;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  white-space: pre;
+}
+
+.element__tag5 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 315px;
+  left: -65px;
+  width: 210px;
+  text-align: left;
+  font-size: 13px;
+  font-family: Arial;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  white-space: pre;
+}
+
+.element-avatar {
+  position: absolute;
+  z-index: 2;
+  top: -11px;
+  left: 45px;
+  width: 80px;
+  height: 110px;
+  border-radius: 10px;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+}
