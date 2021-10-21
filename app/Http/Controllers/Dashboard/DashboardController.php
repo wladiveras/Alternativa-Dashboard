@@ -21,7 +21,6 @@ class DashboardController extends Controller
         $orders_doing =
             DB::table('alt_orders')
             ->whereNull('approved_at')
-            ->whereDate('expire_at', '>=', Carbon::now())
             ->OrderBy('id', 'desc')
             ->get();
             
@@ -29,7 +28,6 @@ class DashboardController extends Controller
             DB::table('alt_orders')
             ->whereNotNull('approved_at')
             ->whereNull('ready_at')
-            ->whereDate('expire_at', '>=', Carbon::now())
             ->OrderBy('id', 'desc')
             ->get();
 
