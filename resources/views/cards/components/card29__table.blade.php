@@ -9,6 +9,7 @@
             <th>RG</th>
             <th>data de Nascimento</th>
             <th>Estado Civil</th>
+            <th>Cargo</th>
 
             <th>Ações</th>
         </tr>
@@ -25,6 +26,7 @@
             <td>{{ $D->front_input3 }}</td>
             <td>{{ $D->front_input4 }}</td>
             <td>{{ $D->front_input5 }}</td>
+            <td>{{ $D->front_input6 }}</td>
 
             <td nowrap="nowrap">
                 <form method="POST" action="{{ route('OrderDelelete') }}">

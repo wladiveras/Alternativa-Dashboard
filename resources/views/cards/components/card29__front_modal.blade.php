@@ -56,4 +56,8 @@
     <div class="invalid-feedback">O campo <b>Estado Civil</b> é necessário.</div>
  </div>
  
-    
+ <div class="form-group">
+    <label>Cargo <span class="text-danger">*</span></label>
+    <input type="text" name="front-input-5" class="form-control" maxlength="50" required>
+    <div class="invalid-feedback">O campo <b>Cargo</b> é necessário.</div>
+ </div>

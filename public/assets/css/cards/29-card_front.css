@@ -73,6 +73,21 @@
   white-space: pre;
 }
 
+.element__tag6 {
+  position: absolute;
+  color: #000;
+  z-index: 2;
+  top: 192px;
+  left: -93px;
+  width: 210px;
+  text-align: left;
+  font-size: 13px;
+  font-family: Arial;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  white-space: pre;
+}
+
 .element-avatar {
   position: absolute;
   z-index: 2;
