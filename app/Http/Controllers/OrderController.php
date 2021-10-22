@@ -261,6 +261,10 @@ class OrderController extends Controller
             }
         }
 
+
+        if ($request->input('card-front')) {
+        }
+
         // Insere a tabulação no banco de dados
         $add_data =
         DB::table('alt_orders_data')

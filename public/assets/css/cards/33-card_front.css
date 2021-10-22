@@ -1,0 +1,11 @@
+.element__tag1 {
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  top: 235px;
+  left: 2px;
+  width: 210px;
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial;
+}
