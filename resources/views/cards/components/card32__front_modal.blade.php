@@ -1,5 +1,7 @@
     <h4>Dados da <b>frente</b> do Cartão </h4>
-   <!-- Start:: Photo -->
+    {{-- <input type="hidden" name="ignore-avatar" value="1"> --}}
+
+    <!-- Start:: Photo -->
    <div class="image-input order-avatar image-input-empty image-input-outline" id="avatar-card" style="background-image: url({{ asset('assets/media/users/blank.png') }})">
    <div class="image-input-wrapper"></div>
 
@@ -23,11 +25,11 @@
        data-action="remove" data-toggle="tooltip" title="Remover Imagem">
        <i class="ki ki-bold-close icon-xs text-muted"></i>
    </span>
-</div>
+</div> 
 <!-- end:: Photo -->
 
 <div class="form-group">
-   <label>Nome <span class="text-danger">*</span></label>
+   <label>Nome<span class="text-danger">*</span></label>
    <input type="text" name="front-input-0" class="form-control" maxlength="50" required>
    <div class="invalid-feedback">O campo <b>Nome</b> é necessário.</div>
 </div>
@@ -37,5 +39,4 @@
     <input type="text" name="front-input-1" class="form-control" maxlength="50" required>
     <div class="invalid-feedback">O campo <b>Função</b> é necessário.</div>
  </div>
-
-    
+ 
