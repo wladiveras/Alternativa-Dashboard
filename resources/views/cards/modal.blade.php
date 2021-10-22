@@ -22,6 +22,16 @@
                             @include('cards.components.'. $card_back->model.'__back_modal')
                         @endif
 
+                    @if($order->id_front == 66 or $order->id_back == 67)
+                    <div class="form-check">
+                        <input type="checkbox" value="" id="confirm-check" required>
+                        <label for="confirm-check" style="font-size:">
+                          Confirmar
+                        </label>
+                        <div class="invalid-feedback">Marque <b>Confirmar</b> para enviar.</div>
+                    </div>
+                    @endif       
+                   
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light-primary font-weight-bold"
                             data-dismiss="modal">Fechar</button>

@@ -1,8 +1,18 @@
     <!-- Dados do Verso do cartão -->
-    <h4>Arte do <b>verso</b> do Cartão</h4>
+    <br><br> <h4 class="text-center">Arte do <b>verso</b> do Cartão</h4><br><br>
     <br>
-    <div class="form-group">
-        <label>Arte d o<span class="text-danger">*</span></label>
-        <input type="text" name="back-input-0" class="form-control" maxlength="50" required>
-        <div class="invalid-feedback">O campo <b>Nome</b> é necessário.</div>
+    <input type="hidden" name="only-back" value="1"> 
+
+    <div class="col-md-12">
+        <div class="text-center form-group">
+            <button class="btn btn-primary" onclick="document.getElementById('back-input-0').click()">Enviar arte</button>
+            <input  name="back-input-0" id="back-input-0" type='file' style="display:none">
+        </div>
     </div>
+      
+    <div class="mb-2 col-md-12">
+        <img id="back-preview" src="{{ asset("assets/media/cards/example_layout.png") }}"
+            alt="back-preview" style="display:block;margin:0 auto;width:213px;height:332px;border-radius:20px;border:black 1px solid">
+    </div>
+
+    

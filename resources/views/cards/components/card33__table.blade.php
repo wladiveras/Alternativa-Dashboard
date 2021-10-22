@@ -2,7 +2,7 @@
     <thead>
             <th>ID</th>
             <th>Cartão</th>
-            <th  style="text-align:right">Ações</th>
+            <th style="text-align:right">Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -10,7 +10,7 @@
         <tr>
             <td>{{ $D->id }}</td>
             <td>{{ $D->front_input1 }}</td>
-
+            
             <td nowrap="nowrap" style="text-align:right">
                 <form method="POST" action="{{ route('OrderDelelete') }}">
                     @csrf
@@ -23,6 +23,5 @@
             </td>
         </tr>
         @endforeach
-
     </tbody>
 </table>
