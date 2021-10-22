@@ -27,15 +27,31 @@
 <!-- end:: Photo -->
 
 <div class="form-group">
-   <label>Nome <span class="text-danger">*</span></label>
+   <label>Nome Completo<span class="text-danger">*</span></label>
    <input type="text" name="front-input-0" class="form-control" maxlength="50" required>
-   <div class="invalid-feedback">O campo <b>Nome</b> é necessário.</div>
+   <div class="invalid-feedback">O campo <b>Nome Completo</b> é necessário.</div>
 </div>
 
 <div class="form-group">
-    <label>Função <span class="text-danger">*</span></label>
+    <label>CPF <span class="text-danger">*</span></label>
     <input type="text" name="front-input-1" class="form-control" maxlength="50" required>
-    <div class="invalid-feedback">O campo <b>Função</b> é necessário.</div>
+    <div class="invalid-feedback">O campo <b>CPF</b> é necessário.</div>
  </div>
 
+ <div class="form-group">
+    <label>RG <span class="text-danger">*</span></label>
+    <input type="text" name="front-input-1" class="form-control" maxlength="50" required>
+    <div class="invalid-feedback">O campo <b>RG</b> é necessário.</div>
+ </div>
+
+ <div class="form-group">
+    <label>Nascimento <span class="text-danger">*</span></label>
+    <input type="text" name="front-input-1" class="form-control" maxlength="50" required>
+    <div class="invalid-feedback">O campo <b>Nascimento</b> é necessário.</div>
+ </div>
     
+ <div class="form-group">
+    <label>Batismo <span class="text-danger">*</span></label>
+    <input type="text" name="front-input-1" class="form-control" maxlength="50" required>
+    <div class="invalid-feedback">O campo <b>Batismo</b> é necessário.</div>
+ </div>
