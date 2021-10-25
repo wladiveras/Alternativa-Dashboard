@@ -3,13 +3,15 @@
     <input type="hidden" name="only-front" value="1"> 
 
     <div class="col-md-12">
-        <div class="text-center form-group">
-            <button class="btn btn-primary" onclick="document.getElementById('front-input-0').click()">Enviar arte</button>
-            <input  name="front-input-0" id="front-input-0" type='file' style="display:none">
+        <div class="form-group">
+            <label for="front-art">Arte da frente</label>
+            <input type="file"
+                class="form-control-file uppy-input-label btn btn-light-primary btn-sm btn-bold"
+                id="front_src" name="arts[]" multiple>
         </div>
     </div>
       
     <div class="mb-2 col-md-12">
-        <img id="front-preview" src="{{ asset("assets/media/cards/example_layout.png") }}"
-            alt="front-preview" style="display:block;margin:0 auto;width:213px;height:332px;border-radius:20px;border:black 1px solid">
+        <img id="front_preview" src="{{ asset("assets/media/cards/example_layout.png") }}"
+            alt="front_preview" style="display:block;margin:0 auto;width:213px;height:332px;border-radius:20px;border:black 1px solid">
     </div>

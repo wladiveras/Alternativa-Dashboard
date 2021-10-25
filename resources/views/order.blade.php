@@ -330,23 +330,21 @@
 
 <script>
     @if($order->id_front == 66)
-    $('#front-input-0').change(function(){           
-        let reader = new FileReader();
-        reader.onload = (e) => { 
-            $('#front-preview').attr('src', e.target.result); 
+    front_src.onchange = evt => {
+        const [file] = front_src.files
+        if (file) {
+          front_preview.src = URL.createObjectURL(file)
         }
-        reader.readAsDataURL(this.files[0]);  
-    });
+    }
     @endif
 
     @if($order->id_back == 67)
-    $('#back-input-0').change(function(){           
-        let reader = new FileReader();
-        reader.onload = (e) => { 
-            $('#back-preview').attr('src', e.target.result); 
+    back_src.onchange = evt => {
+        const [file] = back_src.files
+        if (file) {
+            back_preview.src = URL.createObjectURL(file)
         }
-        reader.readAsDataURL(this.files[0]);  
-    });
+    }
     @endif
 
     @if(Session::get('alert-type') == 'toaster')

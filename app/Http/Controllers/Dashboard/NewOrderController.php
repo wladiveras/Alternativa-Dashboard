@@ -28,10 +28,6 @@ class NewOrderController extends Controller
     // Adicionar novo pedido
     public function AddOrder(Request $request)
     {
-        //Define as variaveis
-        $card_front = null;
-        $card_back = null;
-
         $files = $request->file('artwork');
 
         foreach ($files as $key => $file) {
@@ -99,7 +95,6 @@ class NewOrderController extends Controller
         $zipper->make($path.$zip_name)->folder('assets_'.$orderid)->add($files);
         $zipper->close();
 
-        
         return response()->download($path.$zip_name);
     }
 
@@ -123,7 +118,6 @@ class NewOrderController extends Controller
             ->where('order_id', '=', $request->orderid)
             ->first();
 
- 
         // Send Email
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
 
@@ -134,7 +128,6 @@ class NewOrderController extends Controller
                 ->subject('Em Produção: seu pedido está sendo produzido');
         });
         
-        //
         return redirect()->action([DashboardController::class, 'index'])
         ->with('alert-type', 'toaster')
         ->with('alert-title', 'Finalizado')

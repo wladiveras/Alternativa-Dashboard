@@ -23,7 +23,7 @@
                         @endif
 
                     @if($order->id_front == 66 or $order->id_back == 67)
-                    <div class="form-check">
+                    <div class="form-check" style="text-align: center; font-size: 16px; margin-top: 30px;">
                         <input type="checkbox" value="" id="confirm-check" required>
                         <label for="confirm-check" style="font-size:">
                           Confirmar

@@ -20,12 +20,14 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $id = session('session_order');
-        $token = session('session_token');
-        
         if (!Session::has('session_order')) {
+
             return redirect('/');
+
         } else {
+            $id = session('session_order');
+            $token = session('session_token');
+        
             $order = DB::table('alt_orders')
             ->where('order_id', '=', $id)
             ->first();
@@ -237,6 +239,9 @@ class OrderController extends Controller
     // @info :: Insere as informações no banco de dados
     public function insert(Request $request)
     {
+        $front_input = null;
+        $back_input = null;
+        
         // Verifica se deve ignorar o avatar
         if ($request->input('ignore-avatar') == 1) {
             $avatar = null;
@@ -248,57 +253,23 @@ class OrderController extends Controller
             $request->validate([
                 'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
-        
-            // Recupera os INPUT
-            $input = $request->all();
+
             $avatar = null;
 
             //Verifica se existe a imagem define um nome e move para a pasta correta
             if ($file = $request->file('avatar')) {
-                //Cria um diretorio novo para o tipo de pedido
                 $avatar = md5(date('YmdHis')). "." . $file->getClientOriginalExtension();
                 $file->move('assets/media/users/'.$request->input('order-id').'/', $avatar);
             }
         }
 
         // Imagem propria do cliente
-        if ($request->input('only-front')) {
-            $request->validate([
-                    'front-input-0' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                ]);
-                
-            if ($file = $request->file('front-input-0')) {
-                $file->move('assets/media/users/'.$request->input('order-id').'/'. $request->file('front-input-0').'.'.$file->getClientOriginalExtension());
-            }
-        }
+        if($request->input('only-front') == 1 || $request->input('only-back') == 1) {
+            $arts = $request->file('arts');
 
-        if ($request->input('only-back')) {
-            // Define o valor default para a variável que contém o nome da imagem
-            $nameFile = null;
- 
-            // Verifica se informou o arquivo e se é válido
-            if ($request->hasFile('image') && $request->file('image')->isValid()) {
-         
-                // Define um aleatório para o arquivo baseado no timestamps atual
-                $name = uniqid(date('HisYmd'));
- 
-                // Recupera a extensão do arquivo
-                $extension = $request->image->extension();
- 
-                // Define finalmente o nome
-                $nameFile = "{$name}.{$extension}";
- 
-                // Faz o upload:
-                $upload = $request->image->storeAs('categories', $nameFile);
-                // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
- 
-                // Verifica se NÃO deu certo o upload (Redireciona de volta)
-                if (!$upload) {
-                    return redirect()
-                        ->back()
-                        ->with('error', 'Falha ao fazer upload')
-                        ->withInput();
-                }
+            foreach ($arts as $key => $F) {
+                $art[$key] = md5($key.date('YmdHis')). "." . $F->getClientOriginalExtension();
+                $F->move('assets/media/users/'.$request->input('order-id').'/', $art[$key]);
             }
         }
 
@@ -309,6 +280,8 @@ class OrderController extends Controller
                 [
                 'order_id'     => $request->input('order-id'),
                 'front_avatar' => $avatar,
+                'front_art'    => $art[0]  ?? null,
+                'back_art'     => $art[1]  ?? null,
 
                 'front_input1' => $request->input('front-input-0'),
                 'front_input2' => $request->input('front-input-1'),
@@ -329,7 +302,7 @@ class OrderController extends Controller
                 'back_input8' => $request->input('back-input-7'),
 
                 'created_at' => Carbon::now(),
-            ]
+                ]
             );
 
         // Atualiza a contagem de dados

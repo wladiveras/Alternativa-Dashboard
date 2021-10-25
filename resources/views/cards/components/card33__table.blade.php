@@ -9,7 +9,11 @@
         @foreach($order_data as $D)
         <tr>
             <td>{{ $D->id }}</td>
-            <td>{{ $D->front_input1 }}</td>
+            <td>
+                <a href="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->front_art) }}" target="_blank">
+                    <img class="zoom" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->front_art) }}" style="border-radius:50%;width:50px;height:50px;"/>
+                </a>
+            </td>
             
             <td nowrap="nowrap" style="text-align:right">
                 <form method="POST" action="{{ route('OrderDelelete') }}">

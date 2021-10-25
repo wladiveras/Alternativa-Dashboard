@@ -30,8 +30,12 @@
             @if($D->front_avatar)
                 <img class="element-avatar" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->front_avatar) }}" />
             @endif
+
+            @if($D->front_art)
+                <img style=" position:absolute" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->front_art) }}" width="213.54" height="332.59" />
+            @else
                 <img style=" position:absolute" src="{{ asset('assets/media/cards/uploads/'. $order->order_id .'/'. $order->card_front) }}" width="213.54" height="332.59" />
-            
+            @endif
         </div>
 
         @if($order->id_back > 0)
@@ -61,8 +65,11 @@
               </div>
               @endif
 
-
-              <img id="card" style="position: absolute" src="{{ asset('assets/media/cards/uploads/'. $order->order_id .'/'. $order->card_back) }}" width="213.54"height="332.59" />
+              @if($D->back_art)
+              <img style=" position:absolute" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->back_art) }}" width="213.54" height="332.59" />
+              @else
+                <img id="card" style="position: absolute" src="{{ asset('assets/media/cards/uploads/'. $order->order_id .'/'. $order->card_back) }}" width="213.54"height="332.59" />
+              @endif
           </div>
         @else
         <div class="back">
