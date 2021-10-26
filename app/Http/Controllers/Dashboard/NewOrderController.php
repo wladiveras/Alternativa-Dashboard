@@ -13,7 +13,6 @@ use App\Models\User;
 use Carbon\Carbon;
 use View;
 use Auth;
-
 class NewOrderController extends Controller
 {
     // Controlador da pagina principal
@@ -53,8 +52,8 @@ class NewOrderController extends Controller
             'card_front'  => $art[0]  ?? 0,
             'card_back'   => $art[1]  ?? 0,
             'token'       => $request->input('order_email'),
-            'created_at' => Carbon::now(),
-            'expire_at' => Carbon::now()->addDays(7),
+            'created_at'  => Carbon::now(),
+            'expire_at'   => Carbon::now()->addDays(7),
         ]);
         
         return redirect()->action([DashboardController::class, 'index'])
@@ -236,9 +235,6 @@ class NewOrderController extends Controller
                 );
         }
 
-
-        
-        
         return Excel::download(new OrdersExport($data), $orderid.'_export.csv');
     }
 

@@ -1,0 +1,36 @@
+.element__tag1 {
+  position: absolute;
+  color: #000;
+  z-index: 3;
+  top: 245px;
+  left: 0px;
+  width: 210px;
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #000;
+  z-index: 3;
+  top: 265px;
+  left: 0px;
+  width: 210px;
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.element-avatar {
+  position: absolute;
+  z-index: 2;
+  top: 103px;
+  left: 54px;
+  width: 100px;
+  height: 130px;
+  border: #000 1px solid;
+}
+

@@ -1,0 +1,60 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 128px;
+    left: 19px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 162px;
+    left: 19px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 162px;
+    left: 114px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+}
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 95px;
+    left: 85px;
+    width: 250px;
+    height: 20px;
+    font-size: 8px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+}
+
