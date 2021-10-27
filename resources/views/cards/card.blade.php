@@ -26,6 +26,11 @@
             <span class="element__tag6">{{ $D->front_input6 }}</span>
             <span class="element__tag7">{{ $D->front_input7 }}</span>
             <span class="element__tag8">{{ $D->front_input8 }}</span>
+            <span class="element__tag9">{{ $D->front_input9 }}</span>
+            <span class="element__tag10">{{ $D->front_input10 }}</span>
+            <span class="element__tag11">{{ $D->front_input11 }}</span>
+            <span class="element__tag12">{{ $D->front_input12 }}</span>
+
 
             @if($D->front_avatar)
                 <img class="element-avatar" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->front_avatar) }}" />
@@ -58,6 +63,10 @@
               <span class="element__back6">{{ $D->back_input6 }}</span>
               <span class="element__back7">{{ $D->back_input7 }}</span>
               <span class="element__back8">{{ $D->back_input8 }}</span>
+              <span class="element__back9">{{ $D->back_input9 }}</span>
+              <span class="element__back10">{{ $D->back_input10 }}</span>
+              <span class="element__back11">{{ $D->back_input11 }}</span>
+              <span class="element__back12">{{ $D->back_input12 }}</span>    
                
               @if($D->code == 'i25')
               <div class="element-code">

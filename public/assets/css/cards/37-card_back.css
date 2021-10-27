@@ -1,0 +1,41 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 192px;
+    left: 25px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #253f96;
+    font-family: Arial;
+    text-align: left;
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 225px;
+    left: 25px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #253f96;
+    font-family: Arial;
+    text-align: left;
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 259px;
+    left: 25px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #253f96;
+    font-family: Arial;
+    text-align: left;
+}
