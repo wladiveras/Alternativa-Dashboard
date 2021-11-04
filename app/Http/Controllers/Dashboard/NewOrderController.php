@@ -118,14 +118,14 @@ class NewOrderController extends Controller
             ->first();
 
         // Send Email
-        $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
+        // $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
 
-        $beautymail->send('emails.finished', ['order' => $order], function ($message) use ($order) {
-            $message
-                ->from(env('MAIL_SENDER'))
-                ->to($order->token, 'Alternativa')
-                ->subject('Em Produção: seu pedido está sendo produzido');
-        });
+        // $beautymail->send('emails.finished', ['order' => $order], function ($message) use ($order) {
+        //     $message
+        //         ->from(env('MAIL_SENDER'))
+        //         ->to($order->token, 'Alternativa')
+        //         ->subject('Em Produção: seu pedido está sendo produzido');
+        // });
         
         return redirect()->action([DashboardController::class, 'index'])
         ->with('alert-type', 'toaster')
