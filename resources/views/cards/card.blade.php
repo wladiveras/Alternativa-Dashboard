@@ -31,15 +31,14 @@
             <span class="element__tag11">{{ $D->front_input11 }}</span>
             <span class="element__tag12">{{ $D->front_input12 }}</span>
 
-
             @if($D->front_avatar)
-                <img class="element-avatar" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->front_avatar) }}" />
+                <img class="element-avatar" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->front_avatar) }}"  @if($order->code == 35) width="213.54" height="332.59" @endif  />
             @endif
 
             @if($D->front_art)
                 <img style=" position:absolute" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->front_art) }}" width="213.54" height="332.59" />
             @else
-                <img style=" position:absolute" src="{{ asset('assets/media/cards/uploads/'. $order->order_id .'/'. $order->card_front) }}" width="213.54" height="332.59" />
+                <img style=" position:absolute; @if($order->code == 35) z-index: 2; @endif" src="{{ asset('assets/media/cards/uploads/'. $order->order_id .'/'. $order->card_front) }}" width="213.54" height="332.59" />
             @endif
         </div>
 
@@ -68,14 +67,8 @@
               <span class="element__back11">{{ $D->back_input11 }}</span>
               <span class="element__back12">{{ $D->back_input12 }}</span>    
                
-              @if($D->code == 'i25')
-              <div class="element-code">
-                 <center> {!! DNS1D::getBarcodeHTML($D->code, 'i25') !!}</center>
-              </div>
-              @endif
-
               @if($D->back_art)
-              <img style=" position:absolute" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->back_art) }}" width="213.54" height="332.59" />
+              <img style="position:absolute;" src="{{ asset('assets/media/users/'. $order->order_id .'/'. $D->back_art) }}" width="213.54" height="332.59" />
               @else
                 <img id="card" style="position: absolute" src="{{ asset('assets/media/cards/uploads/'. $order->order_id .'/'. $order->card_back) }}" width="213.54"height="332.59" />
               @endif
