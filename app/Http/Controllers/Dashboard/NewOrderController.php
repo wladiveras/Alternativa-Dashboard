@@ -141,23 +141,31 @@ class NewOrderController extends Controller
         ->OrderBy('id', 'desc')
         ->get();
 
-        $avatar  = null;
-        $front_1 = null;
-        $front_2 = null;
-        $front_3 = null;
-        $front_4 = null;
-        $front_5 = null;
-        $front_6 = null;
-        $front_7 = null;
-        $front_8 = null;
-        $back_1 = null;
-        $back_2 = null;
-        $back_3 = null;
-        $back_4 = null;
-        $back_5 = null;
-        $back_6 = null;
-        $back_7 = null;
-        $back_8 = null;
+        $avatar   = null;
+        $front_1  = null;
+        $front_2  = null;
+        $front_3  = null;
+        $front_4  = null;
+        $front_5  = null;
+        $front_6  = null;
+        $front_7  = null;
+        $front_8  = null;
+        $front_9  = null;
+        $front_10 = null;
+        $front_11 = null;
+        $front_12 = null;       
+        $back_1   = null;
+        $back_2   = null;
+        $back_3   = null;
+        $back_4   = null;
+        $back_5   = null;
+        $back_6   = null;
+        $back_7   = null;
+        $back_8   = null;
+        $back_9   = null;
+        $back_10  = null;
+        $back_11  = null;
+        $back_12  = null;
 
         foreach ($QueryOrders as $O) {
             if (!is_null($O->front_avatar)) {
