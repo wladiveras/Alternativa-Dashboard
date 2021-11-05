@@ -187,6 +187,18 @@ class NewOrderController extends Controller
             if (!is_null($O->front_input8)) {
                 $front_8 = 'frente_8';
             }
+            if (!is_null($O->front_input9)) {
+                $front_9 = 'frente_9';
+            }
+            if (!is_null($O->front_input10)) {
+                $front_10 = 'frente_10';
+            }
+            if (!is_null($O->front_input11)) {
+                $front_11 = 'frente_11';
+            }
+            if (!is_null($O->front_input12)) {
+                $front_12 = 'frente_12';
+            }
             if (!is_null($O->back_input1)) {
                 $back_1  = 'verso_1';
             }
@@ -211,27 +223,46 @@ class NewOrderController extends Controller
             if (!is_null($O->back_input8)) {
                 $back_8  = 'verso_8';
             }
-
+            if (!is_null($O->back_input9)) {
+                $back_9  = 'verso_9';
+            }
+            if (!is_null($O->back_input10)) {
+                $back_10  = 'verso_10';
+            }
+            if (!is_null($O->back_input11)) {
+                $back_11  = 'verso_11';
+            }
+            if (!is_null($O->back_input12)) {
+                $back_12  = 'verso_12';
+            }
             // Instancia a variavel
             $data[] =
                 array(
-                    (!is_null($avatar))  ? ($avatar)  : "" => (!is_null($O->front_avatar)) ? ($O->front_avatar) : "",
-                    (!is_null($front_1)) ? ($front_1) : "" => (!is_null($O->front_input1)) ? ($O->front_input1) : "",
-                    (!is_null($front_2)) ? ($front_2) : "" => (!is_null($O->front_input2)) ? ($O->front_input2) : "",
-                    (!is_null($front_3)) ? ($front_3) : "" => (!is_null($O->front_input3)) ? ($O->front_input3) : "",
-                    (!is_null($front_4)) ? ($front_4) : "" => (!is_null($O->front_input4)) ? ($O->front_input4) : "",
-                    (!is_null($front_5)) ? ($front_5) : "" => (!is_null($O->front_input5)) ? ($O->front_input5) : "",
-                    (!is_null($front_6)) ? ($front_6) : "" => (!is_null($O->front_input6)) ? ($O->front_input6) : "",
-                    (!is_null($front_7)) ? ($front_7) : "" => (!is_null($O->front_input7)) ? ($O->front_input7) : "",
-                    (!is_null($front_8)) ? ($front_8) : "" => (!is_null($O->front_input8)) ? ($O->front_input8) : "",
-                    (!is_null($back_1))  ? ($back_1)  : "" => (!is_null($O->back_input1))  ? ($O->back_input1)  : "",
-                    (!is_null($back_2))  ? ($back_2)  : "" => (!is_null($O->back_input2))  ? ($O->back_input2)  : "",
-                    (!is_null($back_3))  ? ($back_3)  : "" => (!is_null($O->back_input3))  ? ($O->back_input3)  : "",
-                    (!is_null($back_4))  ? ($back_4)  : "" => (!is_null($O->back_input4))  ? ($O->back_input4)  : "",
-                    (!is_null($back_5))  ? ($back_5)  : "" => (!is_null($O->back_input5))  ? ($O->back_input5)  : "",
-                    (!is_null($back_6))  ? ($back_6)  : "" => (!is_null($O->back_input6))  ? ($O->back_input6)  : "",
-                    (!is_null($back_7))  ? ($back_7)  : "" => (!is_null($O->back_input7))  ? ($O->back_input7)  : "",
-                    (!is_null($back_8))  ? ($back_8)  : "" => (!is_null($O->back_input8))  ? ($O->back_input8)  : "",
+                    (!is_null($avatar))   ? ($avatar)    : "" => (!is_null($O->front_avatar))  ? ($O->front_avatar)  :  "",
+                    (!is_null($front_1))  ? ($front_1)   : "" => (!is_null($O->front_input1))  ? ($O->front_input1)  :  "",
+                    (!is_null($front_2))  ? ($front_2)   : "" => (!is_null($O->front_input2))  ? ($O->front_input2)  :  "",
+                    (!is_null($front_3))  ? ($front_3)   : "" => (!is_null($O->front_input3))  ? ($O->front_input3)  :  "",
+                    (!is_null($front_4))  ? ($front_4)   : "" => (!is_null($O->front_input4))  ? ($O->front_input4)  :  "",
+                    (!is_null($front_5))  ? ($front_5)   : "" => (!is_null($O->front_input5))  ? ($O->front_input5)  :  "",
+                    (!is_null($front_6))  ? ($front_6)   : "" => (!is_null($O->front_input6))  ? ($O->front_input6)  :  "",
+                    (!is_null($front_7))  ? ($front_7)   : "" => (!is_null($O->front_input7))  ? ($O->front_input7)  :  "",
+                    (!is_null($front_8))  ? ($front_8)   : "" => (!is_null($O->front_input8))  ? ($O->front_input8)  :  "",
+                    (!is_null($front_9))  ? ($front_9)   : "" => (!is_null($O->front_input9))  ? ($O->front_input9)  :  "",
+                    (!is_null($front_10)) ? ($front_10)  : "" => (!is_null($O->front_input10)) ? ($O->front_input10) :  "",
+                    (!is_null($front_11)) ? ($front_11)  : "" => (!is_null($O->front_input11)) ? ($O->front_input11) :  "",
+                    (!is_null($front_12)) ? ($front_12)  : "" => (!is_null($O->front_input12)) ? ($O->front_input12) :  "",
+                    (!is_null($back_1))   ? ($back_1)    : "" => (!is_null($O->back_input1))   ? ($O->back_input1)   :  "",
+                    (!is_null($back_2))   ? ($back_2)    : "" => (!is_null($O->back_input2))   ? ($O->back_input2)   :  "",
+                    (!is_null($back_3))   ? ($back_3)    : "" => (!is_null($O->back_input3))   ? ($O->back_input3)   :  "",
+                    (!is_null($back_4))   ? ($back_4)    : "" => (!is_null($O->back_input4))   ? ($O->back_input4)   :  "",
+                    (!is_null($back_5))   ? ($back_5)    : "" => (!is_null($O->back_input5))   ? ($O->back_input5)   :  "",
+                    (!is_null($back_6))   ? ($back_6)    : "" => (!is_null($O->back_input6))   ? ($O->back_input6)   :  "",
+                    (!is_null($back_7))   ? ($back_7)    : "" => (!is_null($O->back_input7))   ? ($O->back_input7)   :  "",
+                    (!is_null($back_8))   ? ($back_8)    : "" => (!is_null($O->back_input8))   ? ($O->back_input8)   :  "",
+                    (!is_null($back_9))   ? ($back_9)    : "" => (!is_null($O->back_input9))   ? ($O->back_input9)   :  "",
+                    (!is_null($back_10))  ? ($back_10)   : "" => (!is_null($O->back_input10))  ? ($O->back_input10)  :  "",
+                    (!is_null($back_11))  ? ($back_11)   : "" => (!is_null($O->back_input11))  ? ($O->back_input11)  :  "",
+                    (!is_null($back_12))  ? ($back_12)   : "" => (!is_null($O->back_input12))  ? ($O->back_input12)  :  "",
                 );
         }
 
