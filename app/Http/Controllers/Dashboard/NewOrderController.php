@@ -87,7 +87,7 @@ class NewOrderController extends Controller
     public function DownloadOrders($orderid)
     {
         $path = public_path('/assets/media/users/'.$orderid);
-        $files = File::glob($path.'/*.{png,jpeg,jpg,gif}', GLOB_BRACE);
+        $files = File::glob($path.'/*.{png,jpeg,jpg,gif,jfif}', GLOB_BRACE);
         $zip_name = '/'.$orderid.'_assets.zip';
         
         $zipper = new \Madnest\Madzipper\Madzipper;
