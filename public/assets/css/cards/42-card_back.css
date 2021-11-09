@@ -1,0 +1,15 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 382px;
+    left: 5px;
+    width: 250px;
+    height: 20px;
+    font-size: 13px;
+    color: #444242;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}

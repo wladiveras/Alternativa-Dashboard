@@ -140,7 +140,8 @@ class NewOrderController extends Controller
         ->where('order_id', $orderid)
         ->OrderBy('id', 'desc')
         ->get();
-
+        $bgfront  = null;
+        $bgback   = null;
         $avatar   = null;
         $front_1  = null;
         $front_2  = null;
@@ -168,6 +169,13 @@ class NewOrderController extends Controller
         $back_12  = null;
 
         foreach ($QueryOrders as $O) {
+
+            if (!is_null($O->front_art)) {
+                $bgfront = 'frente_arte';
+            }
+            if (!is_null($O->back_art)) {
+                $bgback = 'verso_arte';
+            }
             if (!is_null($O->front_avatar)) {
                 $avatar = '@PHOTO';
             }
@@ -246,6 +254,9 @@ class NewOrderController extends Controller
             // Instancia a variavel
             $data[] =
                 array(
+                    (!is_null($bgfront))  ? ($bgfront)   : "" => (!is_null($O->front_art))     ? ($O->front_art)     :  "",
+                    (!is_null($bgback))   ? ($bgback)    : "" => (!is_null($O->back_art))      ? ($O->back_art)      :  "",
+                    (!is_null($avatar))   ? ($avatar)    : "" => (!is_null($O->back_art))      ? ($O->back_art)      :  "",
                     (!is_null($avatar))   ? ($avatar)    : "" => (!is_null($O->front_avatar))  ? ($O->front_avatar)  :  "",
                     (!is_null($front_1))  ? ($front_1)   : "" => (!is_null($O->front_input1))  ? ($O->front_input1)  :  "",
                     (!is_null($front_2))  ? ($front_2)   : "" => (!is_null($O->front_input2))  ? ($O->front_input2)  :  "",

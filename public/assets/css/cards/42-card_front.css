@@ -1,0 +1,46 @@
+@font-face {
+  font-family: HALTER;
+  src: url('../../fonts/HALTER__.ttf');
+}
+
+.element__tag1 {
+  position: absolute;
+  color: #ffffff;
+  z-index: 3;
+  top: 140px;
+  left: -90px;
+  text-align: left;
+  font-size: 13px;
+  font-family: HALTER;
+  width: 260px;
+  height: 25px;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #a6cf4d;
+  z-index: 3;
+  top: 140px;
+  left: -70px;
+  text-align: left;
+  font-size: 14px;
+  font-family: HALTER;
+  font-weight: bold;
+  width: 260px;
+  height: 25px;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+}
+
+.element-avatar {
+  position: absolute;
+  z-index: 2;
+  top: 220px;
+  left: 87px;
+  width: 80px;
+  height: 110px;
+  transform: rotate(90deg);
+}
+
