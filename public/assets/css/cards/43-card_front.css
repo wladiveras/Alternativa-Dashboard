@@ -1,0 +1,40 @@
+@font-face {
+  font-family: Born;
+  src: url('../../fonts/BornStrong-Bold.ttf');
+}
+
+.element__tag1 {
+  position: absolute;
+  color: #fff;
+  z-index: 4;
+  top: 260px;
+  font-size: 17px;
+  font-family: Born;
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+.element__tag2 {
+  position: absolute;
+  color: #fff;
+  z-index: 4;
+  top: 280px;
+  font-size: 17px;
+  font-family: Born;
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+.element-avatar {
+  position: absolute;
+  z-index: 2;
+  top: 108px;
+  left: 57px;
+  width: 100px;
+  height: 125px;
+}
+
