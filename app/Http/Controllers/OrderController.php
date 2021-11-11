@@ -191,9 +191,9 @@ class OrderController extends Controller
 
             // Direciona a pagina
             return redirect()->action([OrderController::class, 'index'])
-                ->with('alert-type', 'toaster')
-                ->with('alert-title', 'Pedido nº'. $order->id)
-                ->with('alert-response', 'Olá <b>'. $order->user .'</b>. <br>Adicione as informações para gerar os cartões, ao finalizar verifique as informações e aprove para começar a produção.');
+                ->with('alert-type', 'warning')
+                ->with('alert-title', 'Atenção: No intuito de proteger seus dados, NÃO CEDA ESSE ACESSO A TERCEIROS.')
+                ->with('alert-response', '<div style="text-align:left;font-size:13px">A confecção de Crachás e Carteirinhas corresponde a um procedimento sério e delicado por se tratar da utilização de dados sensíveis. É recorrente a utilização de CPFs, RGs, Pis, nomes de familiares, etc... Nesse sentido, a <b>AlternativaCard</b> têm um completo pacote de procedimentos no intuito de evitar o vazamento dos mesmos: fazemos a utilização de certificações digitais, serviços de CDN e muito mais.<br>Dispomos também de uma política interna de tratamento de dados que compreende: o tratamento centralizado de informações, a responsabilização civil/administrativa de todos os colaboradores responsáveis pelo tratamento, além do processo de descarte automático de dados sensíveis em até 30 dias após da finalização do pedido.<br>Contudo, nossa responsabilidade termina nesse sentido. A cessão dos dados de acesso a essa plataforma a terceiros foge de nossa zona de atuação.<br>Dessa forma, alertamos para que o preenchimento de dados seja feito APENAS por uma pessoa e que esta tenha o compromisso de não deixar esse acesso à disposição de terceiros.<br>\Lembre-se que com os seus Dados criminosos podem cometer crimes que vão desde roubos à falsidade ideológica.<br></div>');
         }
     }
 

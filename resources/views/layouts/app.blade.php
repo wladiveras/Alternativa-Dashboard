@@ -66,6 +66,12 @@
     <!--begin::Layout Themes(used by all pages)-->
     <!--end::Layout Themes-->
     <link rel="shortcut icon" href="{{ asset('assets/media/logos/logo.png') }}" />
+    <style>
+        .swal-wide{
+            width:850px !important;
+            text-align:left;
+        }
+    </style>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -224,6 +230,8 @@
                 icon: 'warning',
                 title: '{!! Session::get("alert-title") !!}',
                 html: '{!! Session::get("alert-response") !!}',
+                confirmButtonText: 'Concordo',
+                customClass: 'swal-wide',
                 footer: '...'
             })
             @elseif(Session::get('alert-type') == 'info')
