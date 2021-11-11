@@ -1,0 +1,28 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 112px;
+    left: 57px;
+    width: 250px;
+    height: 20px;
+    font-size: 13px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 161px;
+    left: 134px;
+    width: 250px;
+    height: 20px;
+    font-size: 13px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+
+}
