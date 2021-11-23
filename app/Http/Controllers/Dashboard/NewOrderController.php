@@ -64,8 +64,10 @@ class NewOrderController extends Controller
 
     public function delOrder(Request $request)
     {
-        File::deleteDirectory(public_path('/assets/media/cards/uploads/'.$request->orderid));
-        File::deleteDirectory(public_path('/assets/media/users/'.$request->orderid));
+        if ($request->orderid) {
+            File::deleteDirectory(public_path('/assets/media/cards/uploads/'.$request->orderid));
+            File::deleteDirectory(public_path('/assets/media/users/'.$request->orderid));
+        }
         
         DB::table('alt_orders')
         ->where('order_id', '=', $request->orderid)

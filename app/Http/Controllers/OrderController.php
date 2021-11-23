@@ -115,8 +115,10 @@ class OrderController extends Controller
 
     public function renewRequest(Request $request)
     {
-        File::cleanDirectory(public_path('/assets/media/users/'.$request->orderid));
-
+        if ($request->order_id) {
+            File::cleanDirectory(public_path('/assets/media/users/'.$request->order_id));
+        }
+    
         DB::table('alt_orders')
         ->where('order_id', $request->order_id)
         ->update([
