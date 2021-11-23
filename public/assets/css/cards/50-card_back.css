@@ -1,0 +1,67 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 173px;
+    left: -25px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: red;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 191px;
+    left: -37px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    color: red;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 160px;
+    left: -48px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    color: red;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 160px;
+    left: -59px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    color: red;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back5 {
+
+}
