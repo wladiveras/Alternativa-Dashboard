@@ -11,7 +11,7 @@
             <th>CPF</th>
             <th>RG</th>
             <th>Nascimento</th>
-
+            <th>Registro</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -28,7 +28,7 @@
             <td>{{ $D->front_input4 }}</td>
             <td>{{ $D->front_input5 }}</td>
             <td>{{ $D->front_input6 }}</td>
-
+            <td>{{ $D->front_input7 }}</td>
  
             <td nowrap="nowrap">
                 <form method="POST" action="{{ route('OrderDelelete') }}">

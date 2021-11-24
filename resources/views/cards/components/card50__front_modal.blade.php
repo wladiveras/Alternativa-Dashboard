@@ -41,7 +41,7 @@
 
  <div class="form-group">
     <label>Filiação<span class="text-danger">*</span></label>
-    <input type="text" name="front-input-2" class="form-control" maxlength="50" required>
+    <input type="text" name="front-input-2" class="form-control" maxlength="150" required>
     <div class="invalid-feedback">O campo <b>Filiação</b> é necessário.</div>
  </div>
 
@@ -61,4 +61,10 @@
    <label>Nascimento<span class="text-danger">*</span></label>
    <input type="text" name="front-input-5" class="form-control" maxlength="50" required>
    <div class="invalid-feedback">O campo <b>Nascimento</b> é necessário.</div>
+</div>
+
+<div class="form-group">
+   <label>Numero de Registro<span class="text-danger">*</span></label>
+   <input type="text" name="front-input-6" class="form-control" maxlength="50" required>
+   <div class="invalid-feedback">O campo <b>Numero de Registro</b> é necessário.</div>
 </div>
