@@ -9,12 +9,11 @@
   position: absolute;
   color: #000;
   z-index: 3;
-  top: 93px;
-  left: -54px;
+  top: 86px;
+  left: -4px;
   text-align: left;
-  font-size: 15px;
+  font-size: 9px;
   font-family: Arial;
-  font-weight: bold;
   width: 190px;
   height: 50px;
   transform: rotate(90deg);
@@ -25,12 +24,11 @@
   position: absolute;
   color: #000;
   z-index: 3;
-  top: 93px;
-  left: -54px;
+  top: 86px;
+  left: -31px;
   text-align: left;
-  font-size: 15px;
+  font-size: 11px;
   font-family: Arial;
-  font-weight: bold;
   width: 190px;
   height: 50px;
   transform: rotate(90deg);
@@ -41,12 +39,11 @@
   position: absolute;
   color: #000;
   z-index: 3;
-  top: 93px;
-  left: -54px;
+  top: 86px;
+  left: -57px;
   text-align: left;
-  font-size: 15px;
+  font-size: 11px;
   font-family: Arial;
-  font-weight: bold;
   width: 190px;
   height: 50px;
   transform: rotate(90deg);
@@ -57,12 +54,11 @@
   position: absolute;
   color: #000;
   z-index: 3;
-  top: 93px;
-  left: -54px;
+  top: 86px;
+  left: -83px;
   text-align: left;
-  font-size: 15px;
+  font-size: 11px;
   font-family: Arial;
-  font-weight: bold;
   width: 190px;
   height: 50px;
   transform: rotate(90deg);
@@ -73,12 +69,11 @@
   position: absolute;
   color: #000;
   z-index: 3;
-  top: 93px;
-  left: -54px;
+  top: 205px;
+  left: -31px;
   text-align: left;
-  font-size: 15px;
+  font-size: 11px;
   font-family: Arial;
-  font-weight: bold;
   width: 190px;
   height: 50px;
   transform: rotate(90deg);
@@ -89,12 +84,11 @@
   position: absolute;
   color: #000;
   z-index: 3;
-  top: 93px;
-  left: -54px;
+  top: 205px;
+  left: -57px;
   text-align: left;
-  font-size: 15px;
+  font-size: 11px;
   font-family: Arial;
-  font-weight: bold;
   width: 190px;
   height: 50px;
   transform: rotate(90deg);
@@ -103,14 +97,14 @@
 
 .element__tag7 {
   position: absolute;
-  color: #000;
+  color: #fff;
   z-index: 3;
-  top: 93px;
-  left: -54px;
+  top: 242px;
+  left: -83px;
   text-align: left;
-  font-size: 15px;
-  font-family: Arial;
+  font-size: 7px;
   font-weight: bold;
+  font-family: Arial;
   width: 190px;
   height: 50px;
   transform: rotate(90deg);
@@ -119,14 +113,14 @@
 
 .element__tag8 {
   position: absolute;
-  color: #000;
+  color: #fff;
   z-index: 3;
-  top: 93px;
-  left: -54px;
+  top: 236px;
+  left: -93px;
   text-align: left;
-  font-size: 15px;
-  font-family: Arial;
+  font-size: 7px;
   font-weight: bold;
+  font-family: Arial;
   width: 190px;
   height: 50px;
   transform: rotate(90deg);
@@ -137,10 +131,11 @@
 .element-avatar {
   position: absolute;
   z-index: 2;
-  top: 220px;
-  left: 87px;
-  width: 80px;
+  top: 229px;
+  left: 25px;
+  width: 82px;
   height: 110px;
+  border-radius: 5px;
   transform: rotate(90deg);
   -ms-transform: rotate(90deg);
 }
