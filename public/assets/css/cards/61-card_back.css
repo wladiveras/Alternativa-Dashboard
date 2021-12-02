@@ -1,0 +1,31 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 82px;
+    left: 25px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg); */
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 124px;
+    left: 25px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+}
