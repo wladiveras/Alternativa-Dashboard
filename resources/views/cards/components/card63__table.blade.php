@@ -7,7 +7,8 @@
 
             <th>Nome</th>
             <th>Função</th>
-            
+            <th>cor</th>
+
             <th>Ações</th>
         </tr>
     </thead>
@@ -20,7 +21,7 @@
             
             <td>{{ $D->front_input1 }}</td>
             <td>{{ $D->front_input2 }}</td>
-        
+            <td>{{ $D->front_input3 }}</td>
 
             <td nowrap="nowrap">
                 <form method="POST" action="{{ route('OrderDelelete') }}">
