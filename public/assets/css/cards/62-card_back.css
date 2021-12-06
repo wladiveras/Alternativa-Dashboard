@@ -1,0 +1,85 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 106px;
+    left: 6px;
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    color: #32317b;
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 133px;
+    left: 6px;
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    color: #32317b;
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 158px;
+    left: 6px;
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    color: #32317b;
+}
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 184px;
+    left: 6px;
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    color: #32317b;
+}
+
+.element__back5 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 158px;
+    left: 110px;
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    color: #32317b;
+}
+
+.element__back6 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 184px;
+    left: 110px;
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    color: #32317b;
+}
+
+
+.element__back7 {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 245px;
+    left: 0px;
+    width: 220px;
+    height: 20px;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
