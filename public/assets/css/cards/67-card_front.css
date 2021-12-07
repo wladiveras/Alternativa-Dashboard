@@ -7,44 +7,38 @@
 
 .element__tag1 {
   position: absolute;
-  color: #000;
+  color: #fff;
   z-index: 3;
-  top: 218px;
+  top: 285px;
   left: 0px;
   text-align: center;
-  font-size: 12px;
+  font-size: 17px;
   font-family: Arial;
-  font-weight: bold;
   width: 100%;
   height: 20px;
 }
 
 .element__tag2 {
   position: absolute;
-  color: #000;
+  color: #fff;
   z-index: 3;
-  top: 258px;
+  top: 300px;
   left: 0px;
   text-align: center;
-  font-size: 12px;
+  font-size: 17px;
   font-family: Arial;
-  font-weight: bold;
   width: 100%;
   height: 20px;
-}
-
-.element__tag3 {
-  display: none;
 }
 
 .element-avatar {
   position: absolute;
   z-index: 2;
-  top: 88px;
-  left: 63px;
-  width: 86px;
-  height: 115px;
-  border-radius: 0px;
+  top: 124px;
+  left: 59px;
+  width: 107px;
+  height: 132px;
+  border-radius: 8px;
 /*   transform: rotate(90deg);
   -ms-transform: rotate(90deg); */
 }

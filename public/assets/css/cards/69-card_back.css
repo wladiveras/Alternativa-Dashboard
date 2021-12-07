@@ -1,0 +1,102 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 96px;
+    left: 15px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg); */
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 135px;
+    left: 15px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg); */
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 170px;
+    left: 15px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg); */
+}
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 205px;
+    left: 15px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg); */
+}
+
+.element__back5 {
+     display: block;
+    position: absolute;
+    z-index: 3;
+    top: 245px;
+    left: 15px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg); */
+}
+
+
+.element__back6 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 96px;
+    left: 120px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg); */
+}

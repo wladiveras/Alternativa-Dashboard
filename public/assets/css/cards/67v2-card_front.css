@@ -7,43 +7,39 @@
 
 .element__tag1 {
   position: absolute;
-  color: #000;
+  color: #fff;
   z-index: 3;
-  top: 218px;
+  top: 266px;
   left: 0px;
-  text-align: center;
-  font-size: 12px;
-  font-family: Arial;
   font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial;
   width: 100%;
   height: 20px;
 }
 
 .element__tag2 {
   position: absolute;
-  color: #000;
+  color: #fff;
   z-index: 3;
-  top: 258px;
+  top: 280px;
   left: 0px;
-  text-align: center;
-  font-size: 12px;
-  font-family: Arial;
   font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial;
   width: 100%;
   height: 20px;
-}
-
-.element__tag3 {
-  display: none;
 }
 
 .element-avatar {
   position: absolute;
   z-index: 2;
-  top: 88px;
-  left: 63px;
-  width: 86px;
-  height: 115px;
+  top: 119px;
+  left: 57px;
+  width: 100px;
+  height: 140px;
   border-radius: 0px;
 /*   transform: rotate(90deg);
   -ms-transform: rotate(90deg); */

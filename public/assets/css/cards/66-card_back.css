@@ -1,0 +1,98 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 147px;
+    left: 55px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 155px;
+    left: 30px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 184px;
+    left: -10px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back4 {
+      display: block;
+    position: absolute;
+    z-index: 3;
+    top: 188px;
+    left: -22px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+.element__back5 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 330px;
+    left: -9px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+.element__back6 {
+      display: block;
+    position: absolute;
+    z-index: 3;
+    top: 334px;
+    left: -22px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}

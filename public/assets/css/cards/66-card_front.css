@@ -9,12 +9,11 @@
   position: absolute;
   color: #000;
   z-index: 3;
-  top: 218px;
-  left: 0px;
-  text-align: center;
-  font-size: 12px;
+  top: 236px;
+  left: 30px;
+  text-align: left;
+  font-size: 9px;
   font-family: Arial;
-  font-weight: bold;
   width: 100%;
   height: 20px;
 }
@@ -23,27 +22,22 @@
   position: absolute;
   color: #000;
   z-index: 3;
-  top: 258px;
-  left: 0px;
-  text-align: center;
-  font-size: 12px;
+  top: 265px;
+  left: 30px;
+  text-align: left;
+  font-size: 9px;
   font-family: Arial;
-  font-weight: bold;
   width: 100%;
   height: 20px;
-}
-
-.element__tag3 {
-  display: none;
 }
 
 .element-avatar {
   position: absolute;
   z-index: 2;
-  top: 88px;
-  left: 63px;
-  width: 86px;
-  height: 115px;
+  top: 93px;
+  left: 60px;
+  width: 94px;
+  height: 125px;
   border-radius: 0px;
 /*   transform: rotate(90deg);
   -ms-transform: rotate(90deg); */
