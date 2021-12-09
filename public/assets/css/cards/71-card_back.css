@@ -1,0 +1,128 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 130px;
+    left: 25px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 130px;
+    left: 15px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 226px;
+    left: -15px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 186px;
+    left: -33px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back5 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 192px;
+    left: -52px;
+    width: 250px;
+    height: 20px;
+    font-size: 10px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back6 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 200px;
+    left: -72px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back7 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 312px;
+    left: -52px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    color: #000;
+    font-weight: bold;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back8 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 315px;
+    left: -72px;
+    width: 250px;
+    height: 20px;
+    font-size: 9px;
+    font-weight: bold;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
