@@ -1,6 +1,6 @@
 .element__tag1 {
     position: absolute;
-    color: #fff;
+    color: #000;
     z-index: 2;
     top: 168px;
     left: -21px;
@@ -13,7 +13,7 @@
 
 .element__tag2 {
     position: absolute;
-    color: #fff;
+    color: #000;
     z-index: 2;
     top: 208px;
     left: -41px;
@@ -26,7 +26,7 @@
 
 .element__tag3 {
     position: absolute;
-    color: #fff;
+    color: #000;
     z-index: 2;
     left: -100px;
     top: 184px;
@@ -40,7 +40,7 @@
 
 .element__tag4 {
     position: absolute;
-    color: #fff;
+    color: #000;
     z-index: 2;
     top: 183px;
     left: -82px;
