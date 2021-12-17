@@ -1,0 +1,64 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 185px;
+    left: 52px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    color: #fff;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 206px;
+    left: 27px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    color: #fff;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 343px;
+    left: 52px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    color: #fff;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 356px;
+    left: 27px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    color: #fff;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); 
+}
+
