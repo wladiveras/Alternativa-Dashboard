@@ -31,9 +31,3 @@
    <input type="text" name="front-input-0" class="form-control" maxlength="21" required>
    <div class="invalid-feedback">O campo <b>nome</b> é necessário.</div>
 </div>
-
-<div class="form-group">
-   <label>Função <span class="text-danger">*</span></label>
-   <input type="text" name="front-input-1" class="form-control" maxlength="21" required>
-   <div class="invalid-feedback">O campo <b>Função</b> é necessário.</div>
-</div>
