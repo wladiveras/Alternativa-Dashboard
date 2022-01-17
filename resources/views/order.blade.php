@@ -46,19 +46,13 @@
             <!--end::Info-->
             <div class="d-flex align-items-center">
 
-                <!-- <form method="POST" action="{{ route('OrderClear') }}">
+                <form method="POST" action="{{ route('OrderClear') }}">
                     @csrf
                     <input type="hidden" name="orderid" value="{{ $order->order_id }}" />
-                    <button 
-                    type="submit"  
-                    data-toggle="tooltip" 
-                    data-theme="dark"
-                    title="Todos os dados referente aos cartões serão excluidos."
-                    class="px-6 py-3 mr-2 btn btn-transparent-white font-weight-bold"
-                    >
+                    <button type="submit" data-toggle="tooltip" data-theme="dark" title="Todos os dados referente aos cartões serão excluidos." class="px-6 py-3 mr-2 btn btn-transparent-white font-weight-bold">
                         <i class="la la-trash"></i> Limpar dados
                     </button>
-                </form>  -->
+                </form>
 
                 <a href="{{ $order->order_link }}" target="_blank" class="px-6 py-3 mr-2 btn btn-transparent-white font-weight-bold">Proposta Comercial</a>
                 <!--begin::Desconnect-->
