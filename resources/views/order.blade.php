@@ -46,13 +46,13 @@
             <!--end::Info-->
             <div class="d-flex align-items-center">
 
-                <form method="POST" action="{{ route('OrderClear') }}">
+                {{-- <form method="POST" action="{{ route('OrderClear') }}">
                     @csrf
                     <input type="hidden" name="orderid" value="{{ $order->order_id }}" />
                     <button type="submit" data-toggle="tooltip" data-theme="dark" title="Todos os dados referente aos cartões serão excluidos." class="px-6 py-3 mr-2 btn btn-transparent-white font-weight-bold">
                         <i class="la la-trash"></i> Limpar dados
                     </button>
-                </form>
+                </form> --}}
 
                 <a href="{{ $order->order_link }}" target="_blank" class="px-6 py-3 mr-2 btn btn-transparent-white font-weight-bold">Proposta Comercial</a>
                 <!--begin::Desconnect-->
@@ -293,7 +293,7 @@
 <script src="{{ asset('assets/js/pages/crud/forms/widgets/jquery.twbsPagination.js') }}"></script>
 
 <script>
-    @if($order - > id_front == 66)
+    @if($order->id_front == 66)
     front_src.onchange = evt => {
         const [file] = front_src.files
         if (file) {
@@ -302,7 +302,7 @@
     }
     @endif
 
-    @if($order - > id_back == 67)
+    @if($order->id_back == 67)
     back_src.onchange = evt => {
         const [file] = back_src.files
         if (file) {
