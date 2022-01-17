@@ -32,8 +32,7 @@
                         <!--end::Item-->
                         <!--begin::Item-->
                         <span class="mx-3 bg-white opacity-75 label label-dot label-sm"></span>
-                        <a href=""
-                            class="text-white opacity-75 text-hover-white hover-opacity-100">{{ env('APP_NAME') }}</a>
+                        <a href="" class="text-white opacity-75 text-hover-white hover-opacity-100">{{ env('APP_NAME') }}</a>
                         <!--end::Item-->
                         <!--begin::Item-->
                         <span class="mx-3 bg-white opacity-75 label label-dot label-sm"></span>
@@ -46,8 +45,8 @@
             </div>
             <!--end::Info-->
             <div class="d-flex align-items-center">
-               
-                <form method="POST" action="{{ route('OrderClear') }}">
+
+                <!-- <form method="POST" action="{{ route('OrderClear') }}">
                     @csrf
                     <input type="hidden" name="orderid" value="{{ $order->order_id }}" />
                     <button 
@@ -59,15 +58,13 @@
                     >
                         <i class="la la-trash"></i> Limpar dados
                     </button>
-                </form> 
+                </form>  -->
 
-                <a href="{{ $order->order_link }}" target="_blank"
-                    class="px-6 py-3 mr-2 btn btn-transparent-white font-weight-bold">Proposta Comercial</a>
+                <a href="{{ $order->order_link }}" target="_blank" class="px-6 py-3 mr-2 btn btn-transparent-white font-weight-bold">Proposta Comercial</a>
                 <!--begin::Desconnect-->
                 <form method="POST" action="{{ route('OrderLogout') }}">
                     @csrf
-                    <div class="ml-2 dropdown dropdown-inline" data-toggle="tooltip" title="" data-placement="top"
-                        data-original-title="Desconectar">
+                    <div class="ml-2 dropdown dropdown-inline" data-toggle="tooltip" title="" data-placement="top" data-original-title="Desconectar">
 
                         <button type="submit" class="px-6 py-3 btn btn-white font-weight-bold">Sair</button>
                     </div>
@@ -84,8 +81,7 @@
             <div class="card card-custom">
                 <div class="p-0 card-body">
                     <!--begin::Wizard-->
-                    <div class="wizard wizard-1" id="kt_wizard" data-wizard-state="step-first"
-                        data-wizard-clickable="false">
+                    <div class="wizard wizard-1" id="kt_wizard" data-wizard-state="step-first" data-wizard-clickable="false">
                         <!--begin::Wizard Nav-->
                         <div class="wizard-nav border-bottom">
                             <div class="p-8 wizard-steps p-lg-10">
@@ -133,20 +129,14 @@
 
                                                 <div class="card-toolbar">
                                                     <!--begin::Button-->
-                                                    <a class="btn btn-primary font-weight-bolder" data-toggle="modal"
-                                                        data-target="#insert-data">
+                                                    <a class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#insert-data">
                                                         <span class="svg-icon svg-icon-md">
                                                             <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                                height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                <g stroke="none" stroke-width="1" fill="none"
-                                                                    fill-rule="evenodd">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                                     <rect x="0" y="0" width="24" height="24" />
                                                                     <circle fill="#000000" cx="9" cy="15" r="6" />
-                                                                    <path
-                                                                        d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z"
-                                                                        fill="#000000" opacity="0.3" />
+                                                                    <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
                                                                 </g>
                                                             </svg>
                                                             <!--end::Svg Icon-->
@@ -212,41 +202,25 @@
                                         <input type="hidden" name="order-id" value="{{  $order->order_id }}">
                                         <div class="pt-10 mt-5 d-flex justify-content-between border-top">
                                             <div class="mr-2">
-                                                <button type="button"
-                                                    class="py-4 btn btn-light-primary font-weight-bolder text-uppercase px-9"
-                                                    data-wizard-type="action-prev">
+                                                <button type="button" class="py-4 btn btn-light-primary font-weight-bolder text-uppercase px-9" data-wizard-type="action-prev">
                                                     Voltar
                                                 </button>
                                             </div>
                                             <div>
                                                 @if($order->limit_count >= $order->limit)
-                                                <button 
-                                                type="button"
-                                                class="py-4 btn btn-success font-weight-bolder text-uppercase px-9"
-                                                data-wizard-type="action-submit"
-                                                >
+                                                <button type="button" class="py-4 btn btn-success font-weight-bolder text-uppercase px-9" data-wizard-type="action-submit">
                                                     Aprovar pedido
                                                 </button>
                                                 @else
-                                                <div 
-                                                class="tooltip-wrapper disabled" 
-                                                data-title="Preencha o restante dos dados para liberar a aprovação do pedido"
-                                                >
-                                                    <button 
-                                                    type="button"
-                                                    class="py-4 btn btn-disabled font-weight-bolder text-uppercase px-9"
-                                                    data-wizard-type="action-submit"
-                                                    disabled
-                                                    >
+                                                <div class="tooltip-wrapper disabled" data-title="Preencha o restante dos dados para liberar a aprovação do pedido">
+                                                    <button type="button" class="py-4 btn btn-disabled font-weight-bolder text-uppercase px-9" data-wizard-type="action-submit" disabled>
                                                         Aprovar pedido
                                                     </button>
                                                 </div>
                                                 @endif
 
                                                 @if($order->limit_count > 0)
-                                                <button type="button"
-                                                    class="py-4 btn btn-primary font-weight-bolder text-uppercase px-9"
-                                                    data-wizard-type="action-next">
+                                                <button type="button" class="py-4 btn btn-primary font-weight-bolder text-uppercase px-9" data-wizard-type="action-next">
                                                     Proximo
                                                 </button>
                                                 @endif
@@ -263,8 +237,7 @@
                     <!--end::Wizard-->
                 </div>
                 <!--end::Wizard-->
-                <a href="https://api.whatsapp.com/send?phone=552126673060&text=*{{ $order->username }}*: estou preenchendo as informações e preciso de uma ajuda."
-                    class="float" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=552126673060&text=*{{ $order->username }}*: estou preenchendo as informações e preciso de uma ajuda." class="float" target="_blank">
                     <i class="fab fa-whatsapp wp-button"></i>
                 </a>
 
@@ -279,8 +252,7 @@
 <!-- Modal-->
 @include('cards.modal')
 
-<div class="modal fade" id="insert-csv" data-backdrop="static" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdrop" aria-hidden="true">
+<div class="modal fade" id="insert-csv" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -299,15 +271,13 @@
                             <div class="text-left custom-file">
 
                                 <input type="hidden" name="orderid" value="{{ $order->order_id }}" />
-                                <input type="file" name="file" class="custom-file-input" id="customFile"
-                                    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                                <input type="file" name="file" class="custom-file-input" id="customFile" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
                                 <label class="custom-file-label" for="customFile">Buscar arquivo CSV</label>
                             </div>
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-light-primary font-weight-bold"
-                                data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Fechar</button>
                             <button type="submit" class="btn btn-primary font-weight-bold">Enviar</button>
                         </div>
                     </form>
@@ -329,16 +299,16 @@
 <script src="{{ asset('assets/js/pages/crud/forms/widgets/jquery.twbsPagination.js') }}"></script>
 
 <script>
-    @if($order->id_front == 66)
+    @if($order - > id_front == 66)
     front_src.onchange = evt => {
         const [file] = front_src.files
         if (file) {
-          front_preview.src = URL.createObjectURL(file)
+            front_preview.src = URL.createObjectURL(file)
         }
     }
     @endif
 
-    @if($order->id_back == 67)
+    @if($order - > id_back == 67)
     back_src.onchange = evt => {
         const [file] = back_src.files
         if (file) {
@@ -388,7 +358,7 @@
         })();
 
     // Paginação dos Cards
-    $(function () {
+    $(function() {
         var paginate = $('#item-pages');
         var paginateChildren = paginate.children();
         var totalItems = paginateChildren.length;
@@ -427,7 +397,7 @@
                 prev: 'Voltar',
                 next: 'Proximo',
                 last: 'Ultimo',
-                onPageClick: function (event, page) {
+                onPageClick: function(event, page) {
                     currentPage.hide();
                     currentPage = $('#item-page-' + page, paginate);
                     currentPage.show();
@@ -435,6 +405,5 @@
             });
         }
     });
-
 </script>
 @endsection
