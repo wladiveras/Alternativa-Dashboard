@@ -26,7 +26,7 @@
                 </form>
             </td>
         </tr>
-        @endforeachasd
+        @endforeach
 
     </tbody>
 </table>
