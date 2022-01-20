@@ -23,13 +23,14 @@
   color:#57585a;
   z-index:3;
   top:225px;
-  left:30px;
+  left:24px;
   text-align: left;
   font-size:13px;
   font-family:Arial;
   font-weight:bold;
   width:150px;
   height:40px;
+  line-height: 0.9;
   transform: rotate(90deg);
   -ms-transform: rotate(90deg);
  }
