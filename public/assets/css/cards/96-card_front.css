@@ -57,7 +57,7 @@
   position: absolute;
   color: #000;
   z-index: 3;
-top: 317px;
+  top: 317px;
   left: -11px;
   text-align: left;
   font-size: 9px;
@@ -66,7 +66,7 @@ top: 317px;
   width: 200px;
   height: 20px; 
   transform: rotate(90deg);
- -ms-transform: rotate(90deg); 
+  -ms-transform: rotate(90deg); 
 }
 
 .element__tag5 {
@@ -82,7 +82,7 @@ top: 317px;
   width: 200px;
   height: 20px; 
   transform: rotate(90deg);
- -ms-transform: rotate(90deg); 
+  -ms-transform: rotate(90deg); 
 }
 
 .element__tag6 {
@@ -98,7 +98,7 @@ top: 317px;
   width: 200px;
   height: 20px; 
   transform: rotate(90deg);
- -ms-transform: rotate(90deg); 
+  -ms-transform: rotate(90deg); 
 }
 
 .element-avatar {
@@ -110,5 +110,4 @@ top: 317px;
   height: 100px;
   border-radius: 6px;
   transform: rotate(90deg);
- -ms-transform: rotate(90deg);   
-
+  -ms-transform: rotate(90deg);   
