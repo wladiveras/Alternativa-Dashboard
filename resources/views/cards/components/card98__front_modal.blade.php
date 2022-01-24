@@ -27,17 +27,7 @@
         <div class="invalid-feedback">O campo é necessário.</div>
     </div>
     <div class="form-group">
-        <label>Função<span class="text-danger">*</span></label>
-        <input type="text" name="front-input-1" class="form-control" maxlength="50" required>
-        <div class="invalid-feedback">O campo é necessário.</div>
-    </div>
-    <div class="form-group">
         <label>CPF<span class="text-danger">*</span></label>
-        <input type="text" name="front-input-2" class="form-control" maxlength="50" required>
-        <div class="invalid-feedback">O campo é necessário.</div>
-    </div>
-    <div class="form-group">
-        <label>Sigla<span class="text-danger">*</span></label>
-        <input type="text" name="front-input-3" class="form-control" maxlength="50" required>
+        <input type="text" name="front-input-1" class="form-control" maxlength="50" required>
         <div class="invalid-feedback">O campo é necessário.</div>
     </div>
