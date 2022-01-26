@@ -6,6 +6,7 @@
             <th>Detalhe</th>
 
             <th>Nome</th>
+            <th>Função</th>
             <th>CPF</th>
 
             <th>Ações</th>
@@ -20,6 +21,7 @@
 
             <td>{{ $D->front_input1 }}</td>
             <td>{{ $D->front_input2 }}</td>
+            <td>{{ $D->front_input3 }}</td>
             
             <td nowrap="nowrap">
                 <form method="POST" action="{{ route('OrderDelelete') }}">
