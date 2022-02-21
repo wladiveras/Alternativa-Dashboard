@@ -1,0 +1,47 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 145px;
+    left: 68px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 149px;
+    left: 53px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 238px;
+    left: 38px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    color: #000;
+    font-family: Arial;
+    text-align: left;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
