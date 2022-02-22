@@ -9,14 +9,14 @@
     position: absolute;
     color: #fff;
     z-index: 3;
-    top: 280px;
+    top: 270px;
     left: 0;
-    text-align: CENTER;
-    font-size: 16px;
+    text-align: center;
+    font-size: 12px;
     font-family: Arial;
     font-weight: bold;
     width: 100%;
-    height: 20px;
+    height: 30px;
     /* transform: rotate(90deg);
   -ms-transform: rotate(90deg); */
 }
@@ -25,14 +25,14 @@
     position: absolute;
     color: #fff;
     z-index: 3;
-    top: 300px;
+    top: 295px;
     left: 0;
-    text-align: CENTER;
-    font-size: 13px;
+    text-align: center;
+    font-size: 12px;
     font-family: Arial;
     font-weight: bold;
     width: 100%;
-    height: 20px;
+    height: 30px;
     /* transform: rotate(90deg);
   -ms-transform: rotate(90deg); */
 }
@@ -40,12 +40,11 @@
 .element-avatar {
     position: absolute;
     z-index: 2;
-    top: 145px;
-    left: 68px;
+    top: 123px;
+    left: 63px;
     width: 87px;
-    height: 113px;
+    height: 119px;
     border-radius: 0px;
-    border: gray 1px solid;
     /* transform: rotate(90deg);
   -ms-transform: rotate(90deg); */
 }

@@ -9,14 +9,14 @@
     position: absolute;
     color: #fff;
     z-index: 3;
-    top: 280px;
+    top: 260px;
     left: 0;
-    text-align: CENTER;
-    font-size: 16px;
+    text-align: center;
+    font-size: 15px;
     font-family: Arial;
-    font-weight: bold;
     width: 100%;
     height: 20px;
+    font-weight: bold;
     /* transform: rotate(90deg);
   -ms-transform: rotate(90deg); */
 }
@@ -25,14 +25,30 @@
     position: absolute;
     color: #fff;
     z-index: 3;
-    top: 300px;
+    top: 275px;
     left: 0;
-    text-align: CENTER;
-    font-size: 13px;
+    text-align: center;
+    font-size: 15px;
     font-family: Arial;
-    font-weight: bold;
     width: 100%;
     height: 20px;
+    font-weight: bold;
+    /* transform: rotate(90deg);
+  -ms-transform: rotate(90deg); */
+}
+
+.element__tag3 {
+    position: absolute;
+    color: #fff;
+    z-index: 3;
+    top: 290px;
+    left: 0;
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial;
+    width: 100%;
+    height: 20px;
+    font-weight: bold;
     /* transform: rotate(90deg);
   -ms-transform: rotate(90deg); */
 }
@@ -40,12 +56,12 @@
 .element-avatar {
     position: absolute;
     z-index: 2;
-    top: 145px;
-    left: 68px;
-    width: 87px;
-    height: 113px;
-    border-radius: 0px;
-    border: gray 1px solid;
+    top: 140px;
+    left: 57px;
+    width: 100px;
+    height: 120px;
+    border-radius: 5px;
+    border: black 2px solid;
     /* transform: rotate(90deg);
   -ms-transform: rotate(90deg); */
 }
