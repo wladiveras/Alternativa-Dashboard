@@ -6,10 +6,7 @@
             <th>Detalhe</th>
 
             <th>Nome</th>
-            <th>RG</th>
-            <th>CPF</th>
-            <th>Orgão</th>
-            <th>Nascimento</th>
+            <th>Função</th>
 
             <th>Ações</th>
         </tr>
@@ -23,9 +20,6 @@
 
             <td>{{ $D->front_input1 }}</td>
             <td>{{ $D->front_input2 }}</td>
-            <td>{{ $D->front_input3 }}</td>
-            <td>{{ $D->front_input4 }}</td>
-            <td>{{ $D->front_input5 }}</td>
 
             <td nowrap="nowrap">
                 <form method="POST" action="{{ route('OrderDelelete') }}">

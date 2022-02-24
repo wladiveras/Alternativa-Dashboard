@@ -29,22 +29,8 @@
     </div>
 
     <div class="form-group">
-        <label>RG<span class="text-danger">*</span></label>
+        <label>Função</label><span class="text-danger">*</span></label>
         <input type="text" name="front-input-1" class="form-control" maxlength="50" required>
         <div class="invalid-feedback">O campo é necessário.</div>
     </div>
-    <div class="form-group">
-        <label>CPF<span class="text-danger">*</span></label>
-        <input type="text" name="front-input-2" class="form-control" maxlength="50" required>
-        <div class="invalid-feedback">O campo é necessário.</div>
-    </div>
-    <div class="form-group">
-        <label>Orgão Expedidor<span class="text-danger">*</span></label>
-        <input type="text" name="front-input-3" class="form-control" maxlength="50" required>
-        <div class="invalid-feedback">O campo é necessário.</div>
-    </div>
-    <div class="form-group">
-        <label>Data de Nascimento<span class="text-danger">*</span></label>
-        <input type="text" name="front-input-4" class="form-control" maxlength="50" required>
-        <div class="invalid-feedback">O campo é necessário.</div>
-    </div>
+   
