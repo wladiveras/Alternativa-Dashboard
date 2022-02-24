@@ -85,6 +85,22 @@
     -ms-transform: rotate(90deg);
 }
 
+.element__tag6 {
+    position: absolute;
+    color: #a73236;
+    z-index: 3;
+    top: 292px;
+    left: 40px;
+    text-align: left;
+    font-size: 17px;
+    font-family: Arial;
+    font-weight: bold;
+    width: 200px;
+    height: 20px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
 .element-avatar {
     position: absolute;
     z-index: 2;
