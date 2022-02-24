@@ -19,7 +19,7 @@
     font-weight: bold;
 }
 
-.element__tag2 {
+.element__tag3 {
     position: absolute;
     display: none;
     z-index: 3;
@@ -27,7 +27,7 @@
     left: 0;
 }
 
-.element__tag3 {
+.element__tag2 {
     position: absolute;
     color: #fff;
     z-index: 3;
