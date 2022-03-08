@@ -1,0 +1,79 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 122px;
+    left: 50px;
+    width: 250px;
+    height: 20px;
+    font-size: 12px;
+    font-family: Arial;
+    text-align: left;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 122px;
+    left: 38px;
+    width: 250px;
+    height: 20px;
+    font-size: 12px;
+    font-family: Arial;
+    text-align: left;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 185px;
+    left: 9px;
+    width: 250px;
+    height: 20px;
+    font-size: 12px;
+    font-family: Arial;
+    text-align: left;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 230px;
+    left: -8px;
+    width: 250px;
+    height: 20px;
+    font-size: 12px;
+    font-family: Arial;
+    text-align: left;
+    color: #fff;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back5 {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 162px;
+    left: 15px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    color: #000;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
