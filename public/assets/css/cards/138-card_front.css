@@ -7,7 +7,7 @@
 
 .element__tag1 {
     position: absolute;
-    color: #fff;
+    color: #000;
     z-index: 3;
     top: 200px;
     left: -53px;
@@ -23,7 +23,7 @@
 
 .element__tag2 {
     position: absolute;
-    color: #fff;
+    color: #000;
     z-index: 3;
     top: 200px;
     left: -80px;
