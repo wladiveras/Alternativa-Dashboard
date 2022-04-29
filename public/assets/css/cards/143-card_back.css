@@ -1,0 +1,116 @@
+.element__back1 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 130px;
+    left: 60px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    color: #000;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg);  */
+}
+
+.element__back2 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 130px;
+    left: 30px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    color: #000;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* transform: rotate(90deg);
+    -ms-transform: rotate(90deg);  */
+}
+
+.element__back3 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 140px;
+    left: -76px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    color: #000;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back4 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 200px;
+    left: -76px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    color: #000;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back5 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 315px;
+    left: -75px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    color: #000;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back6 {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 315px;
+    left: -88px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    color: #000;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.element__back7 {
+display: block;
+    position: absolute;
+    z-index: 3;
+    top: 315px;
+    left: -100px;
+    width: 250px;
+    height: 20px;
+    font-size: 11px;
+    font-family: Arial;
+    text-align: left;
+    color: #000;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
